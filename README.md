@@ -32,24 +32,7 @@
 - MariaDB
 
 ### Pengaturan Pengembangan Lokal
-```bash
-# Clone repositori
-git clone https://github.com/NUGRAHA18/SportTyping.git
-cd SportTyping
-# Instal dependensi PHP
-composer install
-# Salin file environment
-cp .env.example .env
-# Generate kunci aplikasi
-php artisan key:generate
-# Atur kredensial database di file .env
-# Kemudian migrasi dan seed database
-php artisan migrate --seed
-# Kompilasi aset frontend
-npm run dev
-# Mulai server pengembangan
-php artisan serve
-```
+Coming Soon
 
 ## 📱 Tangkapan Layar
 <div style="display: flex; justify-content: space-between;">
@@ -57,9 +40,9 @@ Coming Soon
 </div>
 
 ## 🎯 Peta Jalan
-- [x] Fungsi dasar kompetisi mengetik
-- [x] Autentikasi dan profil pengguna
-- [x] Ruang kompetisi khusus perangkat
+- [ ] Fungsi dasar kompetisi mengetik
+- [ ] Autentikasi dan profil pengguna
+- [ ] Ruang kompetisi khusus perangkat
 - [ ] Implementasi sistem liga
 - [ ] Modul pelajaran mengetik 10 jari
 - [ ] Statistik dan analitik lanjutan
