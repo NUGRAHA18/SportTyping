@@ -25,6 +25,22 @@
 | Radipta Basri Wijaya | 23106050035 | Full Stack Developer |
 | Muhammad Adam | 23106050041 | Tester |
 
+Berikut penjelasan singkat untuk tugas masing-masing anggota tim dalam format semi formal:
+
+### 🛠️ Penjelasan Tugas Anggota Tim SportTyping
+**Sirly Shaira Najiha (23106050003) - Resources & Idea Management**
+Bertanggung jawab untuk mengumpulkan dan mengelola sumber daya yang dibutuhkan dalam pengembangan proyek. Mengoordinasikan ide-ide dari tim, mengembangkan konsep fitur, dan memastikan bahwa visi proyek tetap konsisten. Juga berperan dalam memfasilitasi brainstorming dan mengatur dokumentasi proyek.
+
+**Agung Nugraha (23106050011) - Front End, UI-UX**
+Menangani seluruh aspek tampilan aplikasi yang dilihat pengguna. Merancang antarmuka yang menarik dan berfokus pada pengalaman pengguna, mengimplementasikan desain responsif untuk berbagai perangkat, dan mengembangkan komponen UI interaktif menggunakan HTML, CSS, dan JavaScript.
+
+**Radipta Basri Wijaya (23106050035) - Full Stack Developer**
+Mengembangkan keseluruhan aspek aplikasi, baik sisi front-end maupun back-end. Mengimplementasikan logika bisnis pada kerangka kerja Laravel, mengelola struktur database, dan mengintegrasikan semua komponen menjadi aplikasi yang berfungsi penuh. Juga bertanggung jawab untuk memastikan kinerja dan keamanan sistem.
+
+**Muhammad Adam (23106050041) - Tester**
+Melakukan pengujian komprehensif terhadap aplikasi untuk memastikan kualitas dan mencegah bug. Merancang kasus uji, melakukan pengujian fungsional dan performa, serta memberikan umpan balik untuk perbaikan. Juga bertanggung jawab untuk memverifikasi bahwa aplikasi memenuhi semua persyaratan yang ditentukan.
+
+
 ## 📋 Instalasi & Pengaturan
 ### Prasyarat
 - PHP >= 8.1
