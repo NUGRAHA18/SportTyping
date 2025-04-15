@@ -27,7 +27,7 @@
 
 Berikut penjelasan singkat untuk tugas masing-masing anggota tim dalam format semi formal:
 
-### 🛠️ Penjelasan Tugas Anggota Tim SportTyping
+### Penjelasan Tugas Anggota Tim SportTyping
 **Sirly Shaira Najiha (23106050003) - Resources & Idea Management**
 Bertanggung jawab untuk mengumpulkan dan mengelola sumber daya yang dibutuhkan dalam pengembangan proyek. Mengoordinasikan ide-ide dari tim, mengembangkan konsep fitur, dan memastikan bahwa visi proyek tetap konsisten. Juga berperan dalam memfasilitasi brainstorming dan mengatur dokumentasi proyek.
 
