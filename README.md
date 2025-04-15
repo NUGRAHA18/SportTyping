@@ -1,6 +1,5 @@
 # 🏆 SportTyping
 ## Di Mana Mengetik Menjadi Olahraga Kompetitif
-![SportTyping Banner](https://via.placeholder.com/800x200)
 **SportTyping** adalah platform kompetisi mengetik dinamis yang mengubah keterampilan mengetik sehari-hari menjadi olahraga kompetitif yang menarik. Baik Anda menggunakan smartphone atau laptop, platform kami menawarkan kompetisi khusus perangkat, papan peringkat komprehensif, peringkat liga, dan pelajaran mengetik profesional untuk membantu Anda menguasai teknik mengetik 10 jari.
 
 ## ✨ Fitur
@@ -54,9 +53,7 @@ php artisan serve
 
 ## 📱 Tangkapan Layar
 <div style="display: flex; justify-content: space-between;">
-    <img src="https://via.placeholder.com/250x450" alt="Tampilan Mobile" width="250px">
-    <img src="https://via.placeholder.com/500x300" alt="Balapan Desktop" width="500px">
-    <img src="https://via.placeholder.com/500x300" alt="Papan Peringkat" width="500px">
+Coming Soon
 </div>
 
 ## 🎯 Peta Jalan
