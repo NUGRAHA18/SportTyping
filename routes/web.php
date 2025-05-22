@@ -47,6 +47,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/competitions', [CompetitionController::class, 'index'])->name('competitions.index');
     Route::get('/competitions/{competition}', [CompetitionController::class, 'show'])->name('competitions.show');
     Route::post('/competitions/{competition}/join', [CompetitionController::class, 'join'])->name('competitions.join');
+    Route::post('/api/competitions/{competition}/real-time-stats', [CompetitionController::class, 'getRealTimeStats'])
+        ->name('api.competitions.real-time-stats');
     
     // Competition routes with competition access check
     Route::middleware(['check.competition.access'])->group(function () {
@@ -74,6 +76,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/practice', [PracticeController::class, 'index'])->name('practice.index');
     Route::get('/practice/{text}', [PracticeController::class, 'show'])->name('practice.show');
     Route::post('/practice/{text}/result', [PracticeController::class, 'submitResult'])->name('practice.submit-result');
+    Route::post('/api/practice/calculate-stats', [PracticeController::class, 'calculateRealTimeStats'])
+        ->name('api.practice.calculate-stats');
     
     // Lessons
     Route::get('/lessons', [LessonController::class, 'index'])->name('lessons.index');
@@ -88,7 +92,27 @@ Route::middleware('auth')->group(function () {
     Route::get('/leaderboards/{leaderboard}', [LeaderboardController::class, 'show'])->name('leaderboards.show');
 });
 
-Route::prefix('guest')->group(function () {
+Route::prefix('api/guest')->group(function () {
+    // Guest real-time calculation
+    Route::post('/calculate-wmp', function(Request $request) {
+        $validated = $request->validate([
+            'original_text' => 'required|string',
+            'typed_text' => 'required|string',
+            'elapsed_seconds' => 'required|integer|min:0'
+        ]);
+        
+        $wmpService = app(App\Services\WPMCalculationService::class);
+        $stats = $wmpService->calculateRealTimeWPM(
+            $validated['original_text'],
+            $validated['typed_text'],
+            $validated['elapsed_seconds']
+        );
+        
+        return response()->json($stats);
+    })->name('api.guest.calculate-wmp');
+});
+
+Route::prefix('guest')->middleware('force.guest')->group(function () {
     Route::get('/practice', [GuestController::class, 'practice'])->name('guest.practice');
     Route::get('/practice/{text}', [GuestController::class, 'showPractice'])->name('guest.practice.show');
     Route::get('/lessons', [GuestController::class, 'lessons'])->name('guest.lessons');
@@ -96,3 +120,28 @@ Route::prefix('guest')->group(function () {
     Route::get('/competitions', [GuestController::class, 'competitions'])->name('guest.competitions');
     Route::get('/compete/{competition}', [GuestController::class, 'showCompetition'])->name('guest.competition.show');
 });
+
+// Keyboard guide API untuk Agung
+Route::get('/api/keyboard-guide/{key?}', function($key = null) {
+    $keyboardGuides = [
+        'home_position' => [
+            'image' => '/images/keyboard/home_position.png',
+            'description' => 'ASDF JKL; - Home row position',
+            'left_hand' => ['A', 'S', 'D', 'F'],
+            'right_hand' => ['J', 'K', 'L', ';']
+        ],
+        'a' => [
+            'finger' => 'left pinky',
+            'hand' => 'left',
+            'image' => '/images/keyboard/key_a.png',
+            'description' => 'Press A with your left pinky finger'
+        ]
+        // Sirly akan menambahkan lengkap untuk semua keys
+    ];
+    
+    if ($key) {
+        return response()->json($keyboardGuides[$key] ?? null);
+    }
+    
+    return response()->json(array_keys($keyboardGuides));
+})->name('api.keyboard-guide');

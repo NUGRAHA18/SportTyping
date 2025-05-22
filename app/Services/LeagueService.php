@@ -3,6 +3,7 @@ namespace App\Services;
 
 use App\Models\League;
 use App\Models\User;
+use App\Events\LeaguePromoted;
 
 class LeagueService
 {
@@ -24,7 +25,7 @@ class LeagueService
             $profile->current_league_id = $appropriateLeague->id;
             $profile->save();
             
-            event(new LeaguePromoted($user, $oldLeague, $appropriateLeague));
+            event(new LeaguePromoted($user, $oldLeague, $appropriateLeague));  // This needs the import above
             
             return true;
         }

@@ -6,20 +6,24 @@ use App\Models\CompetitionParticipant;
 use App\Models\CompetitionResult;
 use App\Models\Device;
 use App\Models\UserExperience;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use App\Services\BotService;
+use App\Services\WPMCalculationService;
 use App\Http\Requests\CompetitionJoinRequest;
 use App\Http\Requests\CompetitionResultRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CompetitionController extends Controller
 {
     protected $botService;
+    protected $wpmService; 
 
-    public function __construct(BotService $botService)
+    public function __construct(BotService $botService, WPMCalculationService $wpmService) 
     {
         $this->botService = $botService;
+        $this->wpmService = $wpmService; 
     }
+
     public function index()
     {
         $upcomingCompetitions = Competition::where('status', 'upcoming')
@@ -44,6 +48,7 @@ class CompetitionController extends Controller
     public function join(Competition $competition, CompetitionJoinRequest $request)
     {
         $this->authorize('join', $competition);
+        
         // Check if user already joined
         if ($competition->participants()->where('user_id', Auth::id())->exists()) {
             return redirect()->back()->with('error', 'You have already joined this competition.');
@@ -77,6 +82,7 @@ class CompetitionController extends Controller
     public function compete(Competition $competition)
     {
         $this->authorize('compete', $competition);
+        
         // Check if user is a participant
         if (!$competition->participants()->where('user_id', Auth::id())->exists()) {
             return redirect()->route('competitions.show', $competition)->with('error', 'You must join the competition first.');
@@ -103,23 +109,37 @@ class CompetitionController extends Controller
         return view('competitions.compete', compact('competition', 'bots'));
     }
 
-    public function submitResult(Competition $competition, Request $request)
+    public function submitResult(Competition $competition, CompetitionResultRequest $request)
     {
-        $validated = $request->validate([
-            'typing_speed' => 'required|numeric|min:1',
-            'typing_accuracy' => 'required|numeric|min:1|max:100',
-            'completion_time' => 'required|integer|min:1',
-        ]);
+        $this->authorize('compete', $competition);
+        
+        $validated = $request->validated();
+        
+        // If we have typed_text, calculate stats using WPMCalculationService
+        if (isset($validated['typed_text'])) {
+            $stats = $this->wpmService->calculateTypingStats(
+                $competition->text->content,
+                $validated['typed_text'],
+                $validated['completion_time']
+            );
+            
+            $typingSpeed = $stats['wpm'];
+            $typingAccuracy = $stats['accuracy'];
+        } else {
+            // Fallback to manual input (legacy support)
+            $typingSpeed = $validated['typing_speed'];
+            $typingAccuracy = $validated['typing_accuracy'];
+        }
         
         // Calculate experience earned based on speed and accuracy
-        $experienceEarned = (int) (($validated['typing_speed'] * ($validated['typing_accuracy'] / 100)) * 0.5);
+        $experienceEarned = (int) (($typingSpeed * ($typingAccuracy / 100)) * 0.5);
         
         // Create competition result
         $result = CompetitionResult::create([
             'competition_id' => $competition->id,
             'user_id' => Auth::id(),
-            'typing_speed' => $validated['typing_speed'],
-            'typing_accuracy' => $validated['typing_accuracy'],
+            'typing_speed' => $typingSpeed,
+            'typing_accuracy' => $typingAccuracy,
             'completion_time' => $validated['completion_time'],
             'experience_earned' => $experienceEarned,
         ]);
@@ -161,5 +181,21 @@ class CompetitionController extends Controller
         $result->save();
         
         return view('competitions.result', compact('competition', 'result', 'position'));
+    }
+    
+    public function getRealTimeStats(Competition $competition, Request $request)
+    {
+        $validated = $request->validate([
+            'typed_text' => 'required|string',
+            'elapsed_seconds' => 'required|integer|min:0'
+        ]);
+        
+        $stats = $this->wpmService->calculateRealTimeWPM(
+            $competition->text->content,
+            $validated['typed_text'],
+            $validated['elapsed_seconds']
+        );
+        
+        return response()->json($stats);
     }
 }

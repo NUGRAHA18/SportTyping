@@ -5,6 +5,7 @@ use App\Models\TypingText;
 use App\Models\TextCategory;
 use App\Services\TypingService;
 use App\Services\BadgeService;
+use App\Services\WPMCalculationService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -12,11 +13,16 @@ class PracticeController extends Controller
 {
     protected $typingService;
     protected $badgeService;
+    protected $wpmService;
     
-    public function __construct(TypingService $typingService, BadgeService $badgeService)
-    {
+    public function __construct(
+        TypingService $typingService, 
+        BadgeService $badgeService,
+        WPMCalculationService $wpmService
+    ) {
         $this->typingService = $typingService;
         $this->badgeService = $badgeService;
+        $this->wpmService = $wpmService;
     }
     
     public function index(Request $request)
@@ -49,27 +55,37 @@ class PracticeController extends Controller
     public function submitResult(TypingText $text, Request $request)
     {
         $validated = $request->validate([
-            'typing_speed' => 'required|numeric|min:1',
-            'typing_accuracy' => 'required|numeric|min:1|max:100',
+            'typed_text' => 'required|string',
             'completion_time' => 'required|integer|min:1',
         ]);
         
         $user = Auth::user();
+        $originalText = $text->content;
+        $typedText = $validated['typed_text'];
+        $completionTime = $validated['completion_time'];
+        
+        // Use WPMCalculationService for accurate calculation
+        $stats = $this->wpmService->calculateTypingStats(
+            $originalText,
+            $typedText,
+            $completionTime
+        );
         
         $practice = $this->typingService->recordPracticeSession(
             $user,
             $text,
-            $validated['typing_speed'],
-            $validated['typing_accuracy'],
-            $validated['completion_time']
+            $stats['wpm'],
+            $stats['accuracy'],
+            $completionTime
         );
         
         // Check for speed and accuracy badges
-        $this->badgeService->checkAndAwardSpeedBadges($user, $validated['typing_speed']);
-        $this->badgeService->checkAndAwardAccuracyBadges($user, $validated['typing_accuracy']);
+        $this->badgeService->checkAndAwardSpeedBadges($user, $stats['wpm']);
+        $this->badgeService->checkAndAwardAccuracyBadges($user, $stats['accuracy']);
         
         return redirect()->route('practice.result', $practice)
-            ->with('success', 'Your practice result has been recorded!');
+            ->with('success', 'Your practice result has been recorded!')
+            ->with('stats', $stats);
     }
     
     public function result($practiceId)
@@ -88,5 +104,22 @@ class PracticeController extends Controller
             ->avg('typing_speed');
             
         return view('practice.result', compact('practice', 'bestPractice', 'globalAverage'));
+    }
+
+    public function calculateRealTimeStats(Request $request)
+    {
+        $validated = $request->validate([
+            'original_text' => 'required|string',
+            'typed_text' => 'required|string',
+            'elapsed_seconds' => 'required|integer|min:0'
+        ]);
+        
+        $stats = $this->wpmService->calculateRealTimeWPM(
+            $validated['original_text'],
+            $validated['typed_text'],
+            $validated['elapsed_seconds']
+        );
+        
+        return response()->json($stats);
     }
 }

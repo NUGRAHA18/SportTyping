@@ -4,6 +4,7 @@ namespace App\Services;
 use App\Models\Badge;
 use App\Models\User;
 use App\Models\UserBadge;
+use App\Events\BadgeEarned; 
 
 class BadgeService
 {

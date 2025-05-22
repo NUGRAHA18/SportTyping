@@ -11,11 +11,16 @@ class TypingService
 {
     protected $badgeService;
     protected $leagueService;
-    
-    public function __construct(BadgeService $badgeService, LeagueService $leagueService)
-    {
+    protected $wpmService; 
+
+    public function __construct(
+        BadgeService $badgeService, 
+        LeagueService $leagueService,
+        WPMCalculationService $wpmService  
+    ) {
         $this->badgeService = $badgeService;
         $this->leagueService = $leagueService;
+        $this->wpmService = $wpmService;   
     }
     
     public function recordPracticeSession(User $user, TypingText $text, float $speed, float $accuracy, int $completionTime)

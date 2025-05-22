@@ -14,6 +14,7 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->alias([
             'check.competition.access' => \App\Http\Middleware\CheckCompetitionAccess::class,
+            'force.guest' => \App\Http\Middleware\ForceGuest::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
