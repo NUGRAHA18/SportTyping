@@ -35,7 +35,7 @@
 <body>
     <div class="hero">
         <div class="container">
-            <h1 class="display-4 fw-bold">Welcome to Radipta house</h1>
+            <h1 class="display-4 fw-bold">radipta eek</h1>
             <p class="lead">Transforming typing into a competitive sport since 2025</p>
             <div class="mt-4">
                 @if (Route::has('login'))
