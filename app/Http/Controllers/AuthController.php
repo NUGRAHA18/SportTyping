@@ -22,9 +22,12 @@ class AuthController extends Controller
         $credentials = $request->validate([
             'email' => 'required|email',
             'password' => 'required',
+            'g-recaptcha-response' => 'required|captcha', // Add reCAPTCHA validation
+        ], [
+            'g-recaptcha-response.required' => 'Please verify that you are not a robot.',
+            'g-recaptcha-response.captcha' => 'Captcha verification failed. Please try again.',
         ]);
 
-        // Rate limiting 
         $throttleKey = Str::lower($request->email) . '|' . $request->ip();
         
         if (RateLimiter::tooManyAttempts($throttleKey, 5)) {
@@ -35,7 +38,9 @@ class AuthController extends Controller
             ])->withInput($request->except('password'));
         }
         
-        if (Auth::attempt($credentials, $request->boolean('remember'))) {
+        $loginCredentials = collect($credentials)->except('g-recaptcha-response')->toArray();
+        
+        if (Auth::attempt($loginCredentials, $request->boolean('remember'))) {
             RateLimiter::clear($throttleKey);
             
             $request->session()->regenerate();
@@ -47,7 +52,7 @@ class AuthController extends Controller
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
         ])->withInput($request->except('password'));
-    }
+    }   
 
     public function showRegister()
     {
@@ -66,7 +71,7 @@ class AuthController extends Controller
                 'confirmed',
                 'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/'
             ],
-            // 'g-recaptcha-response' => 'required|captcha',
+            'g-recaptcha-response' => 'required|captcha',
         ], [
             'password.regex' => 'Password must contain at least one uppercase letter, one lowercase letter, one number and one special character.',
             'g-recaptcha-response.required' => 'Please verify that you are not a robot.',

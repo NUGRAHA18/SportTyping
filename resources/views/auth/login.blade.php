@@ -38,6 +38,17 @@
                             </label>
                         </div>
 
+                        <!-- reCAPTCHA for Login (Optional - only for high-security needs) -->
+                        <div class="mb-3">
+                            {!! NoCaptcha::renderJs() !!}
+                            {!! NoCaptcha::display() !!}
+                            @error('g-recaptcha-response')
+                                <span class="invalid-feedback d-block" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+
                         <div class="mb-0">
                             <button type="submit" class="btn btn-primary">
                                 {{ __('Login') }}
