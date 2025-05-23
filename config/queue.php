@@ -1,5 +1,4 @@
 <?php
-
 return [
 
     /*
@@ -52,12 +51,23 @@ return [
             'after_commit' => false,
         ],
 
+        // SportTyping specific queues
         'competitions' => [
-            'driver' => 'redis',
-            'connection' => 'default',
+            'driver' => 'database', // Use database for now, can switch to redis later
+            'connection' => env('DB_QUEUE_CONNECTION'),
+            'table' => env('DB_QUEUE_TABLE', 'jobs'),
             'queue' => 'competitions',
             'retry_after' => 90,
-            'block_for' => null,
+            'after_commit' => false,
+        ],
+
+        'badges' => [
+            'driver' => 'database',
+            'connection' => env('DB_QUEUE_CONNECTION'),
+            'table' => env('DB_QUEUE_TABLE', 'jobs'),
+            'queue' => 'badges',
+            'retry_after' => 90,
+            'after_commit' => false,
         ],
 
         'sqs' => [

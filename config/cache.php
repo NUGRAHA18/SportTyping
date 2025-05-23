@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Support\Str;
 
 return [
@@ -77,10 +76,26 @@ return [
             'lock_connection' => env('REDIS_CACHE_LOCK_CONNECTION', 'default'),
         ],
 
+        // SportTyping specific cache stores
         'leaderboards' => [
-            'driver' => 'redis',
-            'connection' => 'cache',
+            'driver' => 'database', // Use database for now, can switch to redis later
+            'connection' => env('DB_CACHE_CONNECTION'),
+            'table' => env('DB_CACHE_TABLE', 'cache'),
             'prefix' => 'leaderboard:',
+        ],
+
+        'user_stats' => [
+            'driver' => 'database',
+            'connection' => env('DB_CACHE_CONNECTION'),
+            'table' => env('DB_CACHE_TABLE', 'cache'),
+            'prefix' => 'user_stats:',
+        ],
+
+        'badges' => [
+            'driver' => 'database',
+            'connection' => env('DB_CACHE_CONNECTION'),
+            'table' => env('DB_CACHE_TABLE', 'cache'),
+            'prefix' => 'badges:',
         ],
 
         'dynamodb' => [

@@ -17,16 +17,16 @@ class TypingService
 {
     protected $badgeService;
     protected $leagueService;
-    protected $wmpService; 
+    protected $wpmService; 
 
     public function __construct(
         BadgeService $badgeService, 
         LeagueService $leagueService,
-        WPMCalculationService $wmpService  
+        WPMCalculationService $wpmService 
     ) {
         $this->badgeService = $badgeService;
         $this->leagueService = $leagueService;
-        $this->wmpService = $wmpService;   
+        $this->wpmService = $wpmService;
     }
     
     public function recordPracticeSession(User $user, TypingText $text, float $speed, float $accuracy, int $completionTime): UserPractice
@@ -80,7 +80,7 @@ class TypingService
             Log::info('Practice session recorded successfully', [
                 'user_id' => $user->id,
                 'text_id' => $text->id,
-                'wmp' => $speed,
+                'wpm' => $speed,
                 'accuracy' => $accuracy,
                 'experience' => $experienceEarned
             ]);
