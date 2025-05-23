@@ -63,7 +63,7 @@ class DashboardController extends Controller
                     return [
                         'type' => 'competition',
                         'title' => $result->competition->title,
-                        'wpm' => $result->typing_speed,
+                        'wpm' => $result->typing_speed, // FIXED: was wmp
                         'accuracy' => $result->typing_accuracy,
                         'date' => $result->created_at->toISOString(),
                     ];
@@ -78,7 +78,7 @@ class DashboardController extends Controller
                     return [
                         'type' => 'practice',
                         'title' => $practice->text->title,
-                        'wmp' => $practice->typing_speed,
+                        'wpm' => $practice->typing_speed, // FIXED: was wmp
                         'accuracy' => $practice->typing_accuracy,
                         'date' => $practice->created_at->toISOString(),
                     ];

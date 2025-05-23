@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Services;
 
 use App\Exceptions\TypingException;
@@ -29,7 +28,7 @@ class WPMCalculationService
             $wpm = $this->calculateNetWPM($accuracyData['correct_chars'], $timeInSeconds);
             
             $result = [
-                'wpm' => $wmp,
+                'wpm' => $wpm,
                 'accuracy' => $accuracyData['accuracy'],
                 'correct_chars' => $accuracyData['correct_chars'],
                 'total_chars' => $accuracyData['total_chars'],
@@ -37,7 +36,7 @@ class WPMCalculationService
             ];
 
             Log::info('WPM calculation successful', [
-                'wmp' => $wmp,
+                'wpm' => $wpm,
                 'accuracy' => $accuracyData['accuracy'],
                 'time_seconds' => $timeInSeconds
             ]);
@@ -69,9 +68,9 @@ class WPMCalculationService
         
         // Standard: 1 word = 5 characters
         $timeInMinutes = $timeInSeconds / 60;
-        $wmp = ($correctChars / 5) / $timeInMinutes;
+        $wpm = ($correctChars / 5) / $timeInMinutes; // FIXED: consistent variable name
         
-        return max(0, round($wmp));
+        return max(0, round($wpm));
     }
     
     private function calculateAccuracy(string $originalText, string $typedText): array
@@ -118,29 +117,29 @@ class WPMCalculationService
     public function calculateRealTimeWPM(string $originalText, string $typedText, int $elapsedSeconds): array
     {
         if ($elapsedSeconds < 1) {
-            return ['wmp' => 0, 'accuracy' => 0];
+            return ['wpm' => 0, 'accuracy' => 0]; 
         }
         
         try {
             $stats = $this->calculateTypingStats($originalText, $typedText, $elapsedSeconds);
             
             return [
-                'wmp' => $stats['wmp'],
+                'wpm' => $stats['wpm'], 
                 'accuracy' => $stats['accuracy']
             ];
         } catch (TypingException $e) {
             Log::warning('Real-time WPM calculation failed', ['error' => $e->getMessage()]);
-            return ['wmp' => 0, 'accuracy' => 0];
+            return ['wpm' => 0, 'accuracy' => 0];
         }
     }
 
-    public function getSpeedCategory(int $wmp): string
+    public function getSpeedCategory(int $wpm): string 
     {
         return match(true) {
-            $wmp >= 70 => 'expert',
-            $wmp >= 50 => 'advanced', 
-            $wmp >= 30 => 'intermediate',
-            $wmp >= 15 => 'beginner',
+            $wpm >= 70 => 'expert',
+            $wpm >= 50 => 'advanced', 
+            $wpm >= 30 => 'intermediate',
+            $wpm >= 15 => 'beginner',
             default => 'novice'
         };
     }

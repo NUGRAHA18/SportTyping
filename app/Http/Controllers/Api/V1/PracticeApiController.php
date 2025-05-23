@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class PracticeApiController extends BaseApiController
 {
-    public function __construct(private WPMCalculationService $wmpService) {}
+    public function __construct(private WPMCalculationService $wpmService) {} 
 
     public function calculateRealTimeStats(Request $request)
     {
@@ -17,7 +17,7 @@ class PracticeApiController extends BaseApiController
                 'elapsed_seconds' => 'required|integer|min:0|max:3600'
             ]);
 
-            $stats = $this->wmpService->calculateRealTimeWMP(
+            $stats = $this->wpmService->calculateRealTimeWPM(
                 $validated['original_text'],
                 $validated['typed_text'],
                 $validated['elapsed_seconds']
@@ -29,7 +29,7 @@ class PracticeApiController extends BaseApiController
         }
     }
 
-    public function calculateGuestWMP(Request $request)
+    public function calculateGuestWPM(Request $request)
     {
         try {
             $validated = $request->validate([
@@ -38,7 +38,7 @@ class PracticeApiController extends BaseApiController
                 'elapsed_seconds' => 'required|integer|min:1|max:1800'
             ]);
 
-            $stats = $this->wmpService->calculateRealTimeWMP(
+            $stats = $this->wpmService->calculateRealTimeWPM( 
                 $validated['original_text'],
                 $validated['typed_text'],
                 $validated['elapsed_seconds']
