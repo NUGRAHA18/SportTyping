@@ -112,6 +112,10 @@ Route::prefix('api/guest')->group(function () {
     })->name('api.guest.calculate-wmp');
 });
 
+Route::prefix('api')->group(function () {
+    require base_path('routes/api.php');
+});
+
 Route::prefix('guest')->middleware('force.guest')->group(function () {
     Route::get('/practice', [GuestController::class, 'practice'])->name('guest.practice');
     Route::get('/practice/{text}', [GuestController::class, 'showPractice'])->name('guest.practice.show');

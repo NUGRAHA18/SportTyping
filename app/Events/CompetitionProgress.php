@@ -16,17 +16,37 @@ class CompetitionProgress implements ShouldBroadcast
 
     public $competition;
     public $user;
-    public $progress;
+    public $progressData;
 
-    public function __construct(Competition $competition, User $user, int $progress)
+    public function __construct(Competition $competition, User $user, array $progressData)
     {
         $this->competition = $competition;
         $this->user = $user;
-        $this->progress = $progress;
+        $this->progressData = $progressData;
     }
 
     public function broadcastOn()
     {
         return new PresenceChannel('competition.' . $this->competition->id);
+    }
+
+    public function broadcastWith()
+    {
+        return [
+            'user_id' => $this->user->id,
+            'username' => $this->user->username,
+            'avatar' => $this->user->profile->avatar ?? null,
+            'progress' => $this->progressData['progress'] ?? 0,
+            'wpm' => $this->progressData['wpm'] ?? 0,
+            'accuracy' => $this->progressData['accuracy'] ?? 0,
+            'position' => $this->progressData['position'] ?? 0,
+            'is_finished' => $this->progressData['progress'] >= 100,
+            'timestamp' => now()->toISOString(),
+        ];
+    }
+
+    public function broadcastAs()
+    {
+        return 'progress.updated';
     }
 }

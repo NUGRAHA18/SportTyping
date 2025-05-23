@@ -6,106 +6,148 @@ use App\Models\UserExperience;
 use App\Models\UserPractice;
 use App\Models\TypingText;
 use App\Events\UserEarnedExperience;
+use App\Exceptions\TypingException;
+use App\Exceptions\UserException;
+use App\Jobs\ProcessCompetitionResultJob;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class TypingService
 {
     protected $badgeService;
     protected $leagueService;
-    protected $wpmService; 
+    protected $wmpService; 
 
     public function __construct(
         BadgeService $badgeService, 
         LeagueService $leagueService,
-        WPMCalculationService $wpmService  
+        WPMCalculationService $wmpService  
     ) {
         $this->badgeService = $badgeService;
         $this->leagueService = $leagueService;
-        $this->wpmService = $wpmService;   
+        $this->wmpService = $wmpService;   
     }
     
-    public function recordPracticeSession(User $user, TypingText $text, float $speed, float $accuracy, int $completionTime)
+    public function recordPracticeSession(User $user, TypingText $text, float $speed, float $accuracy, int $completionTime): UserPractice
     {
-        // Calculate experience based on speed, accuracy and text difficulty
-        $difficultyMultiplier = $this->getDifficultyMultiplier($text->difficulty_level);
-        $experienceEarned = (int) (($speed * ($accuracy / 100)) * $difficultyMultiplier);
-        
-        // Create practice record
-        $practice = UserPractice::create([
-            'user_id' => $user->id,
-            'text_id' => $text->id,
-            'typing_speed' => $speed,
-            'typing_accuracy' => $accuracy,
-            'completion_time' => $completionTime,
-            'experience_earned' => $experienceEarned,
-        ]);
-        
-        // Add experience
-        UserExperience::create([
-            'user_id' => $user->id,
-            'amount' => $experienceEarned,
-            'source_type' => 'practice',
-            'source_id' => $practice->id,
-        ]);
+        try {
+            DB::beginTransaction();
 
-        // Update user profile
-        $this->updateUserTypingStats($user);
-        
-        // Check for badges
-        $this->badgeService->checkAndAwardSpeedBadges($user, $speed);
-        $this->badgeService->checkAndAwardAccuracyBadges($user, $accuracy);
-        
-        // Check league progression
-        $this->leagueService->updateUserLeague($user);
-        
-        return $practice;
-    }
-    
-    public function updateUserTypingStats(User $user)
-    {
-        $profile = $user->profile;
-        
-        // Get all practice sessions and competition results
-        $practices = $user->practices;
-        $competitionResults = $user->competitionResults;
-        
-        if ($practices->count() > 0 || $competitionResults->count() > 0) {
-            // Calculate average speed
-            $totalSpeedValues = 0;
-            $totalEntries = 0;
-            
-            if ($practices->count() > 0) {
-                $totalSpeedValues += $practices->sum('typing_speed');
-                $totalEntries += $practices->count();
+            // Validate inputs
+            if ($speed < 0 || $accuracy < 0 || $accuracy > 100 || $completionTime <= 0) {
+                throw TypingException::invalidTimeData();
             }
+
+            // Calculate experience based on speed, accuracy and text difficulty
+            $difficultyMultiplier = $this->getDifficultyMultiplier($text->difficulty_level);
+            $experienceEarned = (int) (($speed * ($accuracy / 100)) * $difficultyMultiplier);
             
-            if ($competitionResults->count() > 0) {
-                $totalSpeedValues += $competitionResults->sum('typing_speed');
-                $totalEntries += $competitionResults->count();
-            }
+            // Create practice record
+            $practice = UserPractice::create([
+                'user_id' => $user->id,
+                'text_id' => $text->id,
+                'typing_speed' => $speed,
+                'typing_accuracy' => $accuracy,
+                'completion_time' => $completionTime,
+                'experience_earned' => $experienceEarned,
+            ]);
             
-            $profile->typing_speed_avg = $totalEntries > 0 ? $totalSpeedValues / $totalEntries : 0;
-            
-            // Calculate average accuracy
-            $totalAccuracyValues = 0;
-            $totalEntries = 0;
-            
-            if ($practices->count() > 0) {
-                $totalAccuracyValues += $practices->sum('typing_accuracy');
-                $totalEntries += $practices->count();
-            }
-            
-            if ($competitionResults->count() > 0) {
-                $totalAccuracyValues += $competitionResults->sum('typing_accuracy');
-                $totalEntries += $competitionResults->count();
-            }
-            
-            $profile->typing_accuracy_avg = $totalEntries > 0 ? $totalAccuracyValues / $totalEntries : 0;
-            
-            $profile->save();
+            // Add experience
+            UserExperience::create([
+                'user_id' => $user->id,
+                'amount' => $experienceEarned,
+                'source_type' => 'practice',
+                'source_id' => $practice->id,
+            ]);
+
+            // Fire event for experience earned
+            event(new UserEarnedExperience($user, $experienceEarned, 'practice'));
+
+            // Update user profile asynchronously
+            dispatch(function () use ($user, $speed, $accuracy) {
+                $this->updateUserTypingStats($user);
+                $this->badgeService->checkAndAwardSpeedBadges($user, $speed);
+                $this->badgeService->checkAndAwardAccuracyBadges($user, $accuracy);
+                $this->leagueService->updateUserLeague($user);
+            })->afterCommit();
+
+            // Clear user caches
+            $this->clearUserCaches($user);
+
+            DB::commit();
+
+            Log::info('Practice session recorded successfully', [
+                'user_id' => $user->id,
+                'text_id' => $text->id,
+                'wmp' => $speed,
+                'accuracy' => $accuracy,
+                'experience' => $experienceEarned
+            ]);
+
+            return $practice;
+
+        } catch (TypingException $e) {
+            DB::rollBack();
+            Log::warning('Practice session recording failed', [
+                'user_id' => $user->id,
+                'error' => $e->getMessage()
+            ]);
+            throw $e;
+        } catch (\Exception $e) {
+            DB::rollBack();
+            Log::error('Unexpected error recording practice session', [
+                'user_id' => $user->id,
+                'error' => $e->getMessage(),
+                'trace' => $e->getTraceAsString()
+            ]);
+            throw new TypingException('Failed to record practice session');
         }
     }
     
-    private function getDifficultyMultiplier(string $difficultyLevel)
+    public function updateUserTypingStats(User $user): void
+    {
+        try {
+            $profile = $user->profile;
+            
+            // Use efficient queries to calculate averages
+            $practiceStats = DB::table('user_practices')
+                ->where('user_id', $user->id)
+                ->selectRaw('AVG(typing_speed) as avg_speed, AVG(typing_accuracy) as avg_accuracy, COUNT(*) as total')
+                ->first();
+
+            $competitionStats = DB::table('competition_results')
+                ->where('user_id', $user->id)
+                ->selectRaw('AVG(typing_speed) as avg_speed, AVG(typing_accuracy) as avg_accuracy, COUNT(*) as total')
+                ->first();
+
+            $totalEntries = ($practiceStats->total ?? 0) + ($competitionStats->total ?? 0);
+            
+            if ($totalEntries > 0) {
+                $totalSpeedSum = (($practiceStats->avg_speed ?? 0) * ($practiceStats->total ?? 0)) + 
+                               (($competitionStats->avg_speed ?? 0) * ($competitionStats->total ?? 0));
+                               
+                $totalAccuracySum = (($practiceStats->avg_accuracy ?? 0) * ($practiceStats->total ?? 0)) + 
+                                  (($competitionStats->avg_accuracy ?? 0) * ($competitionStats->total ?? 0));
+
+                $profile->typing_speed_avg = $totalSpeedSum / $totalEntries;
+                $profile->typing_accuracy_avg = $totalAccuracySum / $totalEntries;
+                $profile->save();
+
+                // Clear user stats cache
+                Cache::forget("user.{$user->id}.statistics");
+            }
+
+        } catch (\Exception $e) {
+            Log::error('Failed to update user typing stats', [
+                'user_id' => $user->id,
+                'error' => $e->getMessage()
+            ]);
+            throw UserException::experienceUpdateFailed();
+        }
+    }
+    
+    private function getDifficultyMultiplier(string $difficultyLevel): float
     {
         return match($difficultyLevel) {
             'beginner' => 0.75,
@@ -114,5 +156,20 @@ class TypingService
             'expert' => 1.5,
             default => 1.0,
         };
+    }
+
+    private function clearUserCaches(User $user): void
+    {
+        $cacheKeys = [
+            "user.{$user->id}.dashboard",
+            "user.{$user->id}.profile",
+            "user.{$user->id}.statistics",
+            "api.user.{$user->id}.dashboard",
+            "api.user.{$user->id}.recent_activity",
+        ];
+
+        foreach ($cacheKeys as $key) {
+            Cache::forget($key);
+        }
     }
 }
