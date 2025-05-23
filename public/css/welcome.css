@@ -1,0 +1,194 @@
+
+    :root {
+      /* Base colors */
+      --bg-base:       #1f1f2d;
+      --bg-panel:      rgba(39,41,56,0.8);
+      --accent:        #8a54ff;
+      --accent-light:  #7269ef;
+      --text-light:    #e1e1e6;
+      --text-muted:    #a1a1b3;
+      --radius:        0.75rem;
+    }
+
+    /* Base */
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg-base);
+      color: var(--text-light);
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;               /* ditambahkan */
+                     /* reset padding, kita akan pakai flex */
+      min-height: 50vh;                 /* atau height: 50vh jika ingin kaku */
+      display: flex;                    /* untuk centering konten */
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-image: url('/images/main.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-bottom-left-radius: var(--radius);
+      border-bottom-right-radius: var(--radius);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+    .hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .hero p.lead {
+      font-size: 1.25rem;
+      opacity: 0.9;
+      margin-bottom: 2rem;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      width: 100%;
+      padding: 0 1rem;  /* beri spasi samping agar tidak mepet margin */
+      text-align: center;
+    }
+
+    .container .center {
+      height: 25vh;
+      background: rgba(var(--accent), 0.4);
+      top: 0;
+      backdrop-filter: blur(10px);     /* efek blur di belakang */
+      -webkit-backdrop-filter: blur(10px); /* untuk Safari */
+      border-radius: 20px;             /* sudut melengkung */
+      padding: 2rem;
+      margin: auto;
+      width: fit-content;
+      text-align: center;
+      border-radius: 5;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      
+    }
+
+    .text-muted {
+      color: var(--text-light) !important;
+    }
+
+    /* Buttons */
+    .btn-primary {
+      background: var(--text-light) !important;
+      color: var(--bg-base) !important;
+      border: none !important;
+      padding: .75rem 1.5rem;
+      border-radius: var(--radius) !important;
+      transition: transform .2s;
+    }
+    .btn-primary:hover {
+      transform: scale(1.05);
+    }
+    .btn-outline-secondary {
+      color: var(--text-light) !important;
+      border: 2px solid var(--text-light) !important;
+      background: transparent !important;
+      padding: .75rem 1.5rem;
+      border-radius: var(--radius) !important;
+      transition: background .2s, color .2s;
+    }
+    .btn-outline-secondary:hover {
+      background: var(--text-light) !important;
+      color: var(--bg-base) !important;
+    }
+
+.feature-card {
+  position: relative;
+  overflow: hidden;
+  height: 30vh;
+  /* potongan sudut atas untuk bentuk organic */
+  background: linear-gradient(to bottom right, #4b0082, #8a2be2);
+  clip-path: polygon(
+    0% 40%,       /* pojok kiri atas */
+    60% 60%,     /* titik kiri lengkungan naik */ 
+    100% 40%,     /* pojok kanan atas */
+    100% 100%,   /* pojok kanan bawah */
+    0% 100%      /* pojok kiri bawsah */
+  );
+  border-radius: var(--radius);
+  background: linear-gradient(
+    135deg,
+    rgba(181, 174, 197, 0.8) 0%,
+    rgba(114,105,239,0.8) 0%
+  );
+   backdrop-filter: blur(10px);          /* efek blur */
+  color: var(--text-light);
+  padding: 2rem;
+  transition: transform .2s, box-shadow .2s;
+}
+.col-md-4:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+/* Sinar cahaya lembut di pojok atas */
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  left: -30%;
+  width: 160%;
+  height: 80%;
+  background: radial-gradient(circle at top left,
+    rgba(255,255,255,0.15), transparent 60%);
+  pointer-events: none;
+}
+
+/* Icon bulat */
+.feature-icon {
+  width: 3rem; height: 3rem;
+  margin-bottom: 1rem;
+}
+.feature-icon img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  background: var(--text-light);
+  padding: .3rem;
+}
+
+/* Judul & deskripsi */
+.feature-card h3 {
+  margin: 5rem 0 .75rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+}
+.feature-card p {
+  font-size: .9rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* Footer (stats) */
+.feature-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: .8rem;
+  margin-top: 1.25rem;
+  color: var(--text-light);
+  opacity: .85;
+}
+.feature-footer span:first-child {
+  /* ikon kecil misal online */
+}
+
+
+    /* Footer */
+    footer {
+      background: var(--bg-panel);
+      color: var(--text-muted);
+      text-align: center;
+      padding: 1.5rem 0;
+      font-size: .9rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
