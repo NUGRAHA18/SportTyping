@@ -4,59 +4,63 @@ namespace App\Http\Controllers;
 use App\Models\Leaderboard;
 use App\Models\LeaderboardEntry;
 use App\Models\League;
-use App\Models\TextCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 
 class LeaderboardController extends Controller
 {
     public function index()
     {
-        $globalLeaderboards = Leaderboard::where('type', 'global')
-            ->get();
+        $cacheKey = 'leaderboards.index';
+        
+        $leaderboards = Cache::remember($cacheKey, 600, function () { // 10 minutes cache
+            return [
+                'global' => Leaderboard::where('type', 'global')->get(),
+                'league' => Leaderboard::where('type', 'league')
+                    ->with(['league:id,name'])
+                    ->get(),
+                'device' => Leaderboard::where('type', 'device_type')->get(),
+            ];
+        });
             
-        $leagueLeaderboards = Leaderboard::where('type', 'league')
-            ->with('league')
-            ->get();
-            
-        $deviceLeaderboards = Leaderboard::where('type', 'device_type')
-            ->get();
-            
-        return view('leaderboards.index', compact(
-            'globalLeaderboards',
-            'leagueLeaderboards',
-            'deviceLeaderboards'
-        ));
+        return view('leaderboards.index', [
+            'globalLeaderboards' => $leaderboards['global'],
+            'leagueLeaderboards' => $leaderboards['league'],
+            'deviceLeaderboards' => $leaderboards['device'],
+        ]);
     }
     
     public function show(Leaderboard $leaderboard, Request $request)
     {
-        $entries = LeaderboardEntry::where('leaderboard_id', $leaderboard->id)
-            ->with('user.profile')
-            ->orderBy('rank')
-            ->paginate(20);
+        $page = $request->get('page', 1);
+        $cacheKey = "leaderboard.{$leaderboard->id}.page.{$page}";
+        
+        $data = Cache::remember($cacheKey, 300, function () use ($leaderboard) { // 5 minutes cache
+            $entries = LeaderboardEntry::where('leaderboard_id', $leaderboard->id)
+                ->with(['user:id,username', 'user.profile:user_id,avatar,current_league_id'])
+                ->orderBy('rank')
+                ->paginate(20);
+                
+            $leagueInfo = null;
+            if ($leaderboard->type == 'league' && $leaderboard->league_id) {
+                $leagueInfo = League::find($leaderboard->league_id);
+            }
             
-        $userEntry = LeaderboardEntry::where('leaderboard_id', $leaderboard->id)
-            ->where('user_id', Auth::id())
-            ->first();
-            
-        $leagueInfo = null;
-        $deviceInfo = null;
+            return compact('entries', 'leagueInfo');
+        });
         
-        if ($leaderboard->type == 'league' && $leaderboard->league_id) {
-            $leagueInfo = League::find($leaderboard->league_id);
-        }
+        $userEntry = Cache::remember("leaderboard.{$leaderboard->id}.user." . Auth::id(), 300, function () use ($leaderboard) {
+            return LeaderboardEntry::where('leaderboard_id', $leaderboard->id)
+                ->where('user_id', Auth::id())
+                ->with(['user:id,username', 'user.profile:user_id,avatar'])
+                ->first();
+        });
         
-        if ($leaderboard->type == 'device_type') {
-            $deviceInfo = $leaderboard->device_type;
-        }
-        
-        return view('leaderboards.show', compact(
-            'leaderboard',
-            'entries',
-            'userEntry',
-            'leagueInfo',
-            'deviceInfo'
-        ));
+        return view('leaderboards.show', array_merge($data, [
+            'leaderboard' => $leaderboard,
+            'userEntry' => $userEntry,
+            'deviceInfo' => $leaderboard->type == 'device_type' ? $leaderboard->device_type : null,
+        ]));
     }
 }

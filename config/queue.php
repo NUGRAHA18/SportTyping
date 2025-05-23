@@ -52,6 +52,14 @@ return [
             'after_commit' => false,
         ],
 
+        'competitions' => [
+            'driver' => 'redis',
+            'connection' => 'default',
+            'queue' => 'competitions',
+            'retry_after' => 90,
+            'block_for' => null,
+        ],
+
         'sqs' => [
             'driver' => 'sqs',
             'key' => env('AWS_ACCESS_KEY_ID'),
