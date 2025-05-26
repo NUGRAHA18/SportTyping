@@ -105,6 +105,7 @@ php artisan serve
 -   ✅ Ruang kompetisi khusus perangkat
 -   ✅ Implementasi sistem liga & badge
 -   ✅ Sistem bot kompetitor
+-   ✅ Style pada welcome page, login page, register page, email verification page
 -   ❌ Konten pelajaran mengetik 10 jari
 -   ❌ Aset visual (badge, liga, keyboard guides)
 -   ❌ UI/UX responsif untuk mobile dan desktop
