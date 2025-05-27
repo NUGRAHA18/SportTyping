@@ -743,6 +743,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
 // Add CSS animation
 const style = document.createElement('style');
 style.textContent = `
