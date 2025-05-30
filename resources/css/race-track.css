@@ -1,0 +1,867 @@
+/**
+ * SportTyping - Race Track Animations & Styling
+ * Advanced CSS animations for competitive typing race interface
+ * Adopts CSS variables from app.blade.php for consistent design
+ */
+
+/* =============================================================================
+   RACE TRACK FOUNDATION
+   ============================================================================= */
+
+.race-track-foundation {
+    --track-primary: var(--accent-primary);
+    --track-success: var(--accent-success);
+    --track-warning: var(--accent-secondary);
+    --track-danger: var(--accent-danger);
+    --track-gradient: var(--champion-gradient);
+    --victory-gradient: var(--victory-gradient);
+    --medal-gradient: var(--medal-gradient);
+    
+    /* Track specific colors */
+    --track-surface: linear-gradient(135deg, #e8f4fd 0%, #c3e4fc 50%, #a8dafc 100%);
+    --track-lane-line: rgba(59, 130, 246, 0.2);
+    --track-finish-line: repeating-linear-gradient(45deg, #000 0, #000 8px, #fff 8px, #fff 16px);
+    --track-shadow: 0 8px 32px rgba(59, 130, 246, 0.15);
+    
+    /* Animation timing */
+    --speed-slow: 1.2s;
+    --speed-normal: 0.8s;
+    --speed-fast: 0.4s;
+    --bounce-timing: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --smooth-timing: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* =============================================================================
+   RACE TRACK CONTAINER
+   ============================================================================= */
+
+.sport-race-track {
+    position: relative;
+    width: 100%;
+    min-height: 450px;
+    background: var(--track-surface);
+    border-radius: var(--border-radius-xl);
+    border: 3px solid var(--border-medium);
+    box-shadow: var(--track-shadow);
+    overflow: hidden;
+    
+    /* 3D effect */
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.sport-race-track::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: var(--track-gradient);
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+.sport-race-track::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--track-primary), transparent);
+    opacity: 0.6;
+}
+
+/* =============================================================================
+   TRACK SURFACE & LANES
+   ============================================================================= */
+
+.track-surface {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--track-surface);
+}
+
+.track-lanes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    /* Lane dividers */
+    background-image: 
+        repeating-linear-gradient(
+            0deg,
+            transparent 0,
+            transparent calc(100% / 8 - 1px),
+            var(--track-lane-line) calc(100% / 8 - 1px),
+            var(--track-lane-line) calc(100% / 8 + 1px)
+        );
+}
+
+.track-distance-markers {
+    position: absolute;
+    top: 0;
+    left: 60px;
+    right: 80px;
+    bottom: 0;
+    
+    /* Distance markers every 25% */
+    background-image: 
+        repeating-linear-gradient(
+            90deg,
+            transparent 0,
+            transparent calc(25% - 1px),
+            rgba(59, 130, 246, 0.15) calc(25% - 1px),
+            rgba(59, 130, 246, 0.15) calc(25% + 1px)
+        );
+}
+
+/* =============================================================================
+   START & FINISH LINES
+   ============================================================================= */
+
+.start-line {
+    position: absolute;
+    left: 40px;
+    top: 20px;
+    bottom: 20px;
+    width: 6px;
+    background: var(--victory-gradient);
+    border-radius: 3px;
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+    
+    /* Animated glow */
+    animation: startLineGlow 3s ease-in-out infinite;
+}
+
+.start-line::before {
+    content: 'START';
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--victory-gradient);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    font-weight: 700;
+    font-size: 0.875rem;
+    letter-spacing: 1px;
+    box-shadow: var(--shadow-md);
+}
+
+.finish-line {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    bottom: 20px;
+    width: 60px;
+    background: var(--track-finish-line);
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    font-weight: 900;
+    font-size: 1rem;
+    gap: 0.5rem;
+    box-shadow: var(--shadow-lg);
+    
+    /* Victory animation when someone finishes */
+    transition: all 0.5s ease;
+}
+
+.finish-line.victory {
+    animation: finishLineVictory 2s ease-in-out;
+    box-shadow: 0 0 30px rgba(245, 158, 11, 0.8);
+}
+
+.finish-line .finish-icon {
+    font-size: 1.5rem;
+    color: var(--accent-secondary);
+    animation: finishIconBounce 2s ease-in-out infinite;
+}
+
+@keyframes startLineGlow {
+    0%, 100% { 
+        box-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+        transform: scale(1);
+    }
+    50% { 
+        box-shadow: 0 0 30px rgba(16, 185, 129, 0.8);
+        transform: scale(1.05);
+    }
+}
+
+@keyframes finishLineVictory {
+    0%, 100% { transform: scale(1); }
+    25% { transform: scale(1.1) rotate(-2deg); }
+    75% { transform: scale(1.1) rotate(2deg); }
+}
+
+@keyframes finishIconBounce {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-5px) rotate(10deg); }
+}
+
+/* =============================================================================
+   RACE PARTICIPANTS (RUNNERS)
+   ============================================================================= */
+
+.race-runner {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: all var(--speed-normal) var(--smooth-timing);
+    cursor: pointer;
+    z-index: 100;
+    
+    /* Runner styling */
+    border: 3px solid white;
+    box-shadow: var(--shadow-lg);
+    background: var(--track-gradient);
+    
+    /* Initial position */
+    left: 50px;
+    transform: translateX(0);
+}
+
+/* Runner variants by position */
+.race-runner.position-1 {
+    background: var(--medal-gradient);
+    border-color: #fbbf24;
+    box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.3), var(--shadow-lg);
+}
+
+.race-runner.position-2 {
+    background: linear-gradient(135deg, #94a3b8, #64748b);
+    border-color: #94a3b8;
+    box-shadow: 0 0 0 3px rgba(148, 163, 184, 0.3), var(--shadow-lg);
+}
+
+.race-runner.position-3 {
+    background: linear-gradient(135deg, #cd7c32, #a0522d);
+    border-color: #cd7c32;
+    box-shadow: 0 0 0 3px rgba(205, 124, 50, 0.3), var(--shadow-lg);
+}
+
+/* Current user highlight */
+.race-runner.current-user {
+    border-color: var(--accent-secondary);
+    box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.4), var(--shadow-xl);
+    animation: currentUserPulse 2s ease-in-out infinite;
+    z-index: 110;
+}
+
+/* Bot runners */
+.race-runner.bot-runner {
+    opacity: 0.9;
+    border-color: var(--text-muted);
+    background: linear-gradient(135deg, var(--text-muted), var(--text-secondary));
+}
+
+/* Winner celebration */
+.race-runner.race-winner {
+    animation: winnerCelebration 1.5s ease-in-out infinite;
+    border-color: var(--accent-secondary);
+    box-shadow: 0 0 0 6px rgba(245, 158, 11, 0.6), var(--shadow-xl);
+    z-index: 120;
+}
+
+/* Racing state animations */
+.race-runner.racing {
+    animation: runnerRacing 0.6s ease-in-out infinite alternate;
+}
+
+.race-runner.sprinting {
+    animation: runnerSprinting 0.3s ease-in-out infinite alternate;
+}
+
+.race-runner.finished {
+    animation: runnerFinished 1s var(--bounce-timing);
+}
+
+/* Runner hover effects */
+.race-runner:hover {
+    transform: scale(1.1) translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    z-index: 115;
+}
+
+.race-runner:hover .runner-info {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-10px) scale(1);
+}
+
+/* =============================================================================
+   RUNNER ANIMATIONS
+   ============================================================================= */
+
+@keyframes currentUserPulse {
+    0%, 100% { 
+        box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.4), var(--shadow-xl);
+        transform: scale(1);
+    }
+    50% { 
+        box-shadow: 0 0 0 8px rgba(245, 158, 11, 0.6), var(--shadow-xl);
+        transform: scale(1.05);
+    }
+}
+
+@keyframes winnerCelebration {
+    0%, 100% { 
+        transform: scale(1) rotate(0deg);
+        box-shadow: 0 0 0 6px rgba(245, 158, 11, 0.6), var(--shadow-xl);
+    }
+    25% { 
+        transform: scale(1.15) rotate(-10deg);
+        box-shadow: 0 0 0 10px rgba(245, 158, 11, 0.8), var(--shadow-xl);
+    }
+    75% { 
+        transform: scale(1.15) rotate(10deg);
+        box-shadow: 0 0 0 10px rgba(245, 158, 11, 0.8), var(--shadow-xl);
+    }
+}
+
+@keyframes runnerRacing {
+    0% { 
+        transform: translateY(0) rotate(-1deg);
+        box-shadow: var(--shadow-lg);
+    }
+    100% { 
+        transform: translateY(-2px) rotate(1deg);
+        box-shadow: var(--shadow-xl);
+    }
+}
+
+@keyframes runnerSprinting {
+    0% { 
+        transform: translateY(0) rotate(-2deg) scale(1.02);
+        filter: brightness(1.1);
+    }
+    100% { 
+        transform: translateY(-4px) rotate(2deg) scale(1.05);
+        filter: brightness(1.2);
+    }
+}
+
+@keyframes runnerFinished {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3) rotate(360deg); }
+    100% { transform: scale(1); }
+}
+
+/* =============================================================================
+   RUNNER INFO TOOLTIPS
+   ============================================================================= */
+
+.runner-info {
+    position: absolute;
+    top: -45px;
+    left: 50%;
+    transform: translateX(-50%) translateY(0) scale(0.8);
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--border-radius);
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.3s var(--bounce-timing);
+    z-index: 200;
+    
+    /* Arrow pointing down */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--shadow-lg);
+}
+
+.runner-info::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: rgba(0, 0, 0, 0.9);
+}
+
+.runner-info .info-name {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.runner-info .info-stats {
+    display: flex;
+    gap: 0.75rem;
+    font-size: 0.7rem;
+    opacity: 0.9;
+}
+
+.runner-info .bot-indicator {
+    background: var(--track-danger);
+    padding: 0.125rem 0.375rem;
+    border-radius: 2px;
+    font-size: 0.6rem;
+    margin-left: 0.25rem;
+}
+
+/* =============================================================================
+   PROGRESS INDICATORS
+   ============================================================================= */
+
+.runner-progress {
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: var(--victory-gradient);
+    border-radius: 2px;
+    transition: width 0.5s var(--smooth-timing);
+    position: relative;
+}
+
+.progress-bar-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    animation: progressShimmer 2s ease-in-out infinite;
+}
+
+@keyframes progressShimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* =============================================================================
+   RACE TRACK OVERLAYS
+   ============================================================================= */
+
+.track-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 50;
+}
+
+/* Speed boost visual effect */
+.speed-boost-overlay {
+    background: radial-gradient(circle at var(--boost-x, 50%) var(--boost-y, 50%), 
+        rgba(16, 185, 129, 0.3) 0%, 
+        rgba(16, 185, 129, 0.1) 30%, 
+        transparent 60%);
+    animation: speedBoostPulse 1s ease-out;
+}
+
+@keyframes speedBoostPulse {
+    0% { 
+        opacity: 0; 
+        transform: scale(0.5); 
+    }
+    50% { 
+        opacity: 1; 
+        transform: scale(1.2); 
+    }
+    100% { 
+        opacity: 0; 
+        transform: scale(2); 
+    }
+}
+
+/* Error/mistake visual effect */
+.error-overlay {
+    background: radial-gradient(circle at var(--error-x, 50%) var(--error-y, 50%), 
+        rgba(239, 68, 68, 0.4) 0%, 
+        rgba(239, 68, 68, 0.1) 40%, 
+        transparent 70%);
+    animation: errorFlash 0.5s ease-out;
+}
+
+@keyframes errorFlash {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+/* =============================================================================
+   DISTANCE MARKERS & PROGRESS INDICATORS
+   ============================================================================= */
+
+.distance-markers {
+    position: absolute;
+    bottom: 15px;
+    left: 60px;
+    right: 80px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.distance-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    transition: all 0.3s ease;
+}
+
+.distance-marker.active {
+    color: var(--track-primary);
+    transform: scale(1.1);
+}
+
+.distance-marker .marker-line {
+    width: 2px;
+    height: 20px;
+    background: currentColor;
+    border-radius: 1px;
+}
+
+.distance-marker .marker-text {
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+}
+
+/* =============================================================================
+   CELEBRATION EFFECTS
+   ============================================================================= */
+
+.celebration-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.celebration-particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    animation: particleFall var(--fall-duration, 3s) ease-out forwards;
+}
+
+.celebration-particle.gold { background: var(--accent-secondary); }
+.celebration-particle.silver { background: #94a3b8; }
+.celebration-particle.blue { background: var(--track-primary); }
+.celebration-particle.green { background: var(--track-success); }
+
+@keyframes particleFall {
+    0% {
+        transform: translateY(-20px) rotate(0deg) scale(0);
+        opacity: 1;
+    }
+    10% {
+        transform: translateY(0) rotate(180deg) scale(1);
+        opacity: 1;
+    }
+    90% {
+        transform: translateY(400px) rotate(720deg) scale(1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(450px) rotate(900deg) scale(0);
+        opacity: 0;
+    }
+}
+
+/* Confetti burst effect */
+.confetti-burst {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    pointer-events: none;
+    animation: confettiBurst 2s ease-out;
+}
+
+@keyframes confettiBurst {
+    0% {
+        transform: translate(-50%, -50%) scale(0) rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.5) rotate(180deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(3) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* =============================================================================
+   RESPONSIVE RACE TRACK
+   ============================================================================= */
+
+@media (max-width: 1024px) {
+    .sport-race-track {
+        min-height: 350px;
+    }
+    
+    .race-runner {
+        width: 45px;
+        height: 45px;
+        font-size: 0.8rem;
+    }
+    
+    .finish-line {
+        width: 50px;
+        font-size: 0.875rem;
+    }
+    
+    .runner-info {
+        font-size: 0.7rem;
+        padding: 0.375rem 0.625rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .sport-race-track {
+        min-height: 280px;
+        border-radius: var(--border-radius-lg);
+    }
+    
+    .race-runner {
+        width: 40px;
+        height: 40px;
+        font-size: 0.75rem;
+    }
+    
+    .start-line {
+        left: 30px;
+        width: 4px;
+    }
+    
+    .finish-line {
+        width: 40px;
+        font-size: 0.75rem;
+        gap: 0.25rem;
+    }
+    
+    .finish-line .finish-icon {
+        font-size: 1.2rem;
+    }
+    
+    .distance-markers {
+        left: 40px;
+        right: 60px;
+        font-size: 0.7rem;
+    }
+    
+    .runner-info {
+        display: none; /* Hide on mobile to prevent clutter */
+    }
+}
+
+@media (max-width: 480px) {
+    .sport-race-track {
+        min-height: 240px;
+    }
+    
+    .race-runner {
+        width: 35px;
+        height: 35px;
+        font-size: 0.7rem;
+        left: 25px;
+    }
+    
+    .start-line {
+        left: 20px;
+    }
+    
+    .finish-line {
+        width: 35px;
+        right: 15px;
+    }
+    
+    .distance-markers {
+        left: 30px;
+        right: 50px;
+    }
+    
+    .distance-marker .marker-line {
+        height: 15px;
+    }
+    
+    .distance-marker .marker-text {
+        font-size: 0.65rem;
+    }
+}
+
+/* =============================================================================
+   TRACK SPECIAL EFFECTS
+   ============================================================================= */
+
+/* Photo finish effect */
+.photo-finish {
+    position: absolute;
+    right: 20px;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(245, 158, 11, 0.1) 20%, 
+        rgba(245, 158, 11, 0.3) 50%, 
+        rgba(245, 158, 11, 0.1) 80%, 
+        transparent 100%);
+    animation: photoFinishFlash 0.5s ease-in-out;
+    z-index: 200;
+}
+
+@keyframes photoFinishFlash {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+/* Track weather effects (optional enhancement) */
+.track-weather.rain::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(transparent 0%, rgba(59, 130, 246, 0.1) 100%);
+    animation: rainEffect 1s ease-in-out infinite;
+}
+
+@keyframes rainEffect {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.7; }
+}
+
+/* Track boost zones (gamification element) */
+.boost-zone {
+    position: absolute;
+    width: 60px;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(16, 185, 129, 0.2), 
+        transparent);
+    border: 2px solid rgba(16, 185, 129, 0.4);
+    border-radius: var(--border-radius);
+    animation: boostZonePulse 2s ease-in-out infinite;
+}
+
+@keyframes boostZonePulse {
+    0%, 100% { 
+        opacity: 0.6; 
+        transform: scale(1); 
+    }
+    50% { 
+        opacity: 1; 
+        transform: scale(1.05); 
+    }
+}
+
+/* =============================================================================
+   ACCESSIBILITY & REDUCED MOTION
+   ============================================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .race-runner,
+    .finish-line,
+    .start-line,
+    .celebration-particle,
+    .progress-bar-fill::after {
+        animation: none !important;
+    }
+    
+    .race-runner {
+        transition: left 1s ease;
+    }
+    
+    .runner-info {
+        transition: opacity 0.3s ease;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .sport-race-track {
+        border-width: 4px;
+        border-color: currentColor;
+    }
+    
+    .race-runner {
+        border-width: 4px;
+        border-color: currentColor;
+    }
+    
+    .finish-line {
+        border: 3px solid currentColor;
+    }
+    
+    .start-line {
+        background: currentColor;
+    }
+}
+
+/* =============================================================================
+   DEBUGGING & DEVELOPMENT HELPERS
+   ============================================================================= */
+
+.race-track-debug .race-runner::after {
+    content: attr(data-progress) '%';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    z-index: 300;
+}
+
+.race-track-debug .track-lanes {
+    background-image: 
+        repeating-linear-gradient(
+            0deg,
+            rgba(255, 0, 0, 0.1) 0,
+            rgba(255, 0, 0, 0.1) calc(100% / 8 - 1px),
+            rgba(255, 0, 0, 0.3) calc(100% / 8 - 1px),
+            rgba(255, 0, 0, 0.3) calc(100% / 8 + 1px)
+        );
+}
