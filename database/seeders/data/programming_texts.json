@@ -1,0 +1,72 @@
+[
+  {
+    "title": "Variabel dalam Python",
+    "content": "Variabel di Python adalah tempat menyimpan data yang nilainya bisa berubah, dengan tipe data ditentukan otomatis berdasarkan nilai yang diberikan.",
+    "word_count": 20,
+    "category_id": 1,
+    "difficulty_level": "beginner"
+  },
+  {
+    "title": "Struktur If Else",
+    "content": "Struktur if-else menjalankan kode tertentu jika kondisi benar, dan kode lain jika kondisi salah. If mengecek kondisi, sedangkan else menjalankan alternatif saat kondisi tidak terpenuhi. Ini mengatur alur program berdasarkan kondisi.",
+    "word_count": 31,
+    "category_id": 1,
+    "difficulty_level": "beginner"
+  },
+  {
+    "title": "Pengulangan dengan For",
+    "content": "Perulangan for digunakan untuk mengeksekusi kode secara berulang dengan jumlah pengulangan yang sudah diketahui, seperti pada contoh for i in range(5): print(i) yang akan mencetak angka dari 0 hingga 4 secara berurutan",
+    "word_count": 32,
+    "category_id": 1,
+    "difficulty_level": "beginner"
+  },
+  {
+    "title": "Fungsi dalam JavaScript",
+    "content": "Fungsi adalah blok kode yang dirancang untuk melakukan tugas tertentu. Di JavaScript, kita bisa menulis function salam() { console.log(\"Halo!\"); } untuk mencetak pesan.",
+    "word_count": 21,
+    "category_id": 1,
+    "difficulty_level": "intermediate"
+  },
+  {
+    "title": "Konsep Pemrograman Modular",
+    "content": "Pemrograman modular adalah teknik perancangan perangkat lunak yang memecah program besar menjadi bagian-bagian kecil yang disebut modul, di mana setiap modul memiliki tanggung jawab spesifik, dirancang agar mandiri, mudah digunakan kembali, dan memungkinkan pengelolaan serta pengembangan kode yang lebih sederhana dan terstruktur.",
+    "word_count": 42,
+    "category_id": 1,
+    "difficulty_level": "intermediate"
+  },
+  {
+    "title": "Array dan Index",
+    "content": "Array adalah struktur data yang menyimpan kumpulan nilai dengan tipe data yang sama secara berurutan, di mana setiap nilai dapat diakses menggunakan indeks yang dimulai dari nol, sehingga misalnya angka akan mengakses elemen pertama dalam array tersebut.",
+    "word_count": 37,
+    "category_id": 1,
+    "difficulty_level": "intermediate"
+  },
+  {
+    "title": "Pemrograman Berorientasi Objek",
+    "content": "Object Oriented Programming (OOP) memungkinkan kita untuk membuat objek yang merepresentasikan data dan perilaku secara bersamaan, dengan konsep penting seperti enkapsulasi yang mengikat data dan metode dalam satu unit, pewarisan yang memungkinkan kelas baru mewarisi sifat dan fungsi dari kelas lain, serta polimorfisme yang memungkinkan objek berbeda merespons perintah yang sama dengan cara yang berbeda.",
+    "word_count": 55,
+    "category_id": 1,
+    "difficulty_level": "intermediate"
+  },
+  {
+    "title": "Algoritma Bubble Sort",
+    "content": "Bubble sort adalah algoritma pengurutan yang bekerja dengan cara membandingkan dua elemen yang bersebelahan dalam sebuah daftar data. Jika elemen pertama lebih besar daripada elemen kedua, maka kedua elemen tersebut akan ditukar posisinya. Proses perbandingan dan penukaran ini diulang terus menerus dari awal hingga akhir daftar, sehingga elemen terbesar secara bertahap \"menggelembung\" ke posisi paling akhir. ",
+    "word_count": 56,
+    "category_id": 1,
+    "difficulty_level": "advance"
+  },
+  {
+    "title": "Arsitektur Microservices",
+    "content": "Microservices adalah pendekatan pengembangan perangkat lunak yang membagi sebuah sistem besar menjadi layanan-layanan kecil yang berjalan secara independen. Setiap layanan ini memiliki tanggung jawab atas fungsi bisnis tertentu dan beroperasi secara mandiri, sehingga memungkinkan pengembangan dan pemeliharaan yang lebih terfokus. Layanan-layanan tersebut saling berkomunikasi melalui API yang terstandarisasi, memungkinkan integrasi yang mudah meskipun menggunakan teknologi yang berbeda.",
+    "word_count": 57,
+    "category_id": 1,
+    "difficulty_level": "advance"
+  },
+  {
+    "title": "Konsep Dependency Injection",
+    "content": "Dependency Injection adalah pola desain dalam pemrograman berorientasi objek yang memisahkan proses pembuatan objek dari penggunaannya. Dengan kata lain, objek yang membutuhkan suatu layanan atau komponen tidak lagi bertanggung jawab untuk membuat atau mengelola dependensi tersebut secara langsung, melainkan dependensi tersebut disediakan atau \"disuntikkan\" dari luar, biasanya oleh sebuah container atau framework khusus",
+    "word_count": 53,
+    "category_id": 1,
+    "difficulty_level": "advance"
+  }
+]

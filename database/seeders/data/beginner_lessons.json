@@ -1,0 +1,122 @@
+[
+  {
+    "title": "Posisi Baris Dasar",
+    "content": "Baris Dasar adalah baris tengah pada keyboard Anda. Untuk keyboard QWERTY standar, terdiri dari tombol: ASDF untuk tangan kiri, dan JKL; untuk tangan kanan. Letakkan jari-jari Anda pada tombol-tombol ini sebagai posisi istirahat default. Ibu jari Anda harus beristirahat di tombol spasi.",
+    "difficulty_level": "beginner",
+    "order_number": 1,
+    "estimated_completion_time": 10,
+    "experience_reward": 50
+  },
+  {
+    "title": "Tombol F dan J",
+    "content": "Tombol F dan J biasanya memiliki tonjolan atau garis kecil pada mereka. Ini adalah indikator taktil untuk membantu Anda menemukan baris dasar tanpa melihat keyboard. Jari telunjuk kiri Anda harus beristirahat di F, dan jari telunjuk kanan Anda harus beristirahat di J. Berlatih mengetik tombol-tombol ini tanpa melihat ke bawah.",
+    "difficulty_level": "beginner",
+    "order_number": 2,
+    "estimated_completion_time": 15,
+    "experience_reward": 75
+  },
+  {
+    "title": "Baris Dasar Tangan Kiri",
+    "content": "Berlatih tombol-tombol baris dasar tangan kiri: A (kelingking), S (jari manis), D (jari tengah), F (jari telunjuk). Mulai perlahan dan fokus menggunakan jari yang benar untuk setiap tombol. Ketik setiap huruf beberapa kali: aaaa ssss dddd ffff. Ingat untuk mengembalikan jari-jari Anda ke posisi dasar setelah setiap penekanan tombol.",
+    "difficulty_level": "beginner",
+    "order_number": 3,
+    "estimated_completion_time": 20,
+    "experience_reward": 100
+  },
+  {
+    "title": "Baris Dasar Tangan Kanan",
+    "content": "Berlatih tombol-tombol baris dasar tangan kanan: J (jari telunjuk), K (jari tengah), L (jari manis), ; (kelingking). Ketik setiap huruf beberapa kali: jjjj kkkk llll ;;;;. Fokus pada kemandirian jari dan kembali ke posisi dasar di antara penekanan tombol.",
+    "difficulty_level": "beginner",
+    "order_number": 4,
+    "estimated_completion_time": 20,
+    "experience_reward": 100
+  },
+  {
+    "title": "Kombinasi Baris Dasar",
+    "content": "Sekarang berlatih menggabungkan tombol-tombol baris dasar tangan kiri dan kanan. Coba kombinasi ini: as, df, jk, lf, ad, sk, fl, jd. Fokus pada transisi yang lancar antara tangan sambil mempertahankan posisi jari yang tepat pada baris dasar.",
+    "difficulty_level": "beginner",
+    "order_number": 5,
+    "estimated_completion_time": 25,
+    "experience_reward": 125
+  },
+  {
+    "title": "Jangkauan Baris Atas - Tangan Kiri",
+    "content": "Belajar menjangkau ke baris atas dengan tangan kiri Anda. Berlatih: Q (kelingking), W (jari manis), E (jari tengah), R (jari telunjuk). Ingat untuk menjangkau ke atas dari posisi baris dasar Anda dan kembali segera setelah mengetik setiap tombol. Berlatih: qwer qwer qwer",
+    "difficulty_level": "beginner",
+    "order_number": 6,
+    "estimated_completion_time": 25,
+    "experience_reward": 125
+  },
+  {
+    "title": "Jangkauan Baris Atas - Tangan Kanan",
+    "content": "Berlatih menjangkau ke baris atas dengan tangan kanan: T (jari telunjuk), Y (jari telunjuk), U (jari tengah), I (jari manis), O (kelingking), P (kelingking). Ketik: tyuiop tyuiop tyuiop. Jaga pergelangan tangan Anda tetap lurus dan jari-jari melengkung.",
+    "difficulty_level": "beginner",
+    "order_number": 7,
+    "estimated_completion_time": 25,
+    "experience_reward": 125
+  },
+  {
+    "title": "Jangkauan Baris Bawah - Tangan Kiri",
+    "content": "Berlatih menjangkau ke baris bawah dengan tangan kiri: Z (kelingking), X (jari manis), C (jari tengah), V (jari telunjuk). Ketik: zxcv zxcv zxcv. Ingat untuk menahan jari-jari lain di baris dasar saat menjangkau.",
+    "difficulty_level": "beginner",
+    "order_number": 8,
+    "estimated_completion_time": 25,
+    "experience_reward": 125
+  },
+  {
+    "title": "Jangkauan Baris Bawah - Tangan Kanan",
+    "content": "Berlatih tombol-tombol baris bawah tangan kanan: B (jari telunjuk), N (jari telunjuk), M (jari tengah), , (jari manis), . (kelingking). Ketik: bnm,. bnm,. bnm,. Fokus pada kembali ke posisi baris dasar setelah setiap jangkauan.",
+    "difficulty_level": "beginner",
+    "order_number": 9,
+    "estimated_completion_time": 25,
+    "experience_reward": 125
+  },
+  {
+    "title": "Kata Tiga Huruf Sederhana",
+    "content": "Berlatih mengetik kata-kata tiga huruf sederhana menggunakan tombol yang telah Anda pelajari: dan, ini, itu, ada, dia, kau, saya, yang, bisa, mau, tau, hal, apa, tak, pun, lah, kan, per, pro, com, net, org, web, tim, pak, ibu, mas, mbak, dik, kak, bos",
+    "difficulty_level": "beginner",
+    "order_number": 10,
+    "estimated_completion_time": 30,
+    "experience_reward": 150
+  },
+  {
+    "title": "Kata Empat Huruf Umum",
+    "content": "Berlatih kata-kata empat huruf yang umum: dari, akan, yang, tidak, juga, bisa, saja, pula, kita, kami, kamu, anda, buat, cara, masa, saat, waktu, hanya, sudah, telah, pasti, maka, atau, jadi, mari, yuk, dulu, lagi, nanti, baik, buruk",
+    "difficulty_level": "beginner",
+    "order_number": 11,
+    "estimated_completion_time": 30,
+    "experience_reward": 150
+  },
+  {
+    "title": "Latihan Tombol Spasi",
+    "content": "Tombol spasi ditekan dengan ibu jari Anda. Berlatih mengetik kata-kata dengan spasi yang tepat: 'Saya sedang belajar mengetik. Ini menyenangkan dan berguna.' Fokus menggunakan sentuhan ringan dengan ibu jari dan menjaga ritme antara kata-kata.",
+    "difficulty_level": "beginner",
+    "order_number": 12,
+    "estimated_completion_time": 20,
+    "experience_reward": 100
+  },
+  {
+    "title": "Huruf Kapital - Tombol Shift",
+    "content": "Belajar menggunakan tombol Shift untuk huruf kapital. Gunakan tombol Shift kiri untuk huruf-huruf tangan kanan dan tombol Shift kanan untuk huruf-huruf tangan kiri. Berlatih: Kucing Coklat Yang Cepat. Selalu gunakan tombol Shift tangan yang berlawanan dari huruf yang Anda kapitalisasi.",
+    "difficulty_level": "beginner",
+    "order_number": 13,
+    "estimated_completion_time": 25,
+    "experience_reward": 125
+  },
+  {
+    "title": "Kalimat Sederhana",
+    "content": "Berlatih mengetik kalimat lengkap dengan kapitalisasi dan spasi yang tepat: 'Kucing duduk di atas tikar. Saya suka membaca buku. Hari ini adalah hari yang baik. Dia pergi ke toko.' Fokus pada ritme yang lancar dan akurasi daripada kecepatan.",
+    "difficulty_level": "beginner",
+    "order_number": 14,
+    "estimated_completion_time": 35,
+    "experience_reward": 175
+  },
+  {
+    "title": "Ulasan dan Penilaian",
+    "content": "Pelajaran ulasan lengkap yang menggabungkan semua keterampilan yang dipelajari. Ketik paragraf ini: 'Saya telah mempelajari dasar-dasar mengetik sentuh. Jari-jari saya tahu di mana menemukan setiap tombol pada keyboard. Dengan latihan, saya akan menjadi lebih cepat dan lebih akurat. Mengetik sentuh adalah keterampilan berharga yang akan membantu saya di banyak bidang kehidupan.'",
+    "difficulty_level": "beginner",
+    "order_number": 15,
+    "estimated_completion_time": 40,
+    "experience_reward": 200
+  }
+]

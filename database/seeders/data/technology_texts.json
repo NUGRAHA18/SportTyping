@@ -1,0 +1,79 @@
+[
+  {
+    "title": "Asal Usul Sistem Operasi Komputer",
+    "content": "Sistem operasi adalah perangkat lunak dasar yang mengatur interaksi antara perangkat keras dan perangkat lunak. Sistem operasi pertama dikembangkan pada era komputer mainframe untuk mengelola waktu dan sumber daya komputer. Seiring waktu, muncul sistem operasi personal seperti MS-DOS dan Windows yang memungkinkan pengguna umum mengakses kemampuan komputer tanpa memahami bahasa mesin.",
+    "word_count": 51,
+    "category_id": 4,
+    "difficulty_level": "beginner"
+  },
+
+  {
+    "title": "Sejarah Komputer Pribadi",
+    "content": "Komputer pribadi pertama kali diperkenalkan pada tahun 1970-an dan merevolusi cara manusia bekerja. Awalnya hanya digunakan oleh kalangan profesional dan penggemar teknologi, namun seiring berkembangnya perangkat lunak dan sistem operasi yang lebih ramah pengguna, komputer menjadi alat penting dalam kehidupan sehari-hari. Perusahaan seperti Apple dan IBM memainkan peran besar dalam mempercepat adopsi komputer pribadi di rumah dan kantor.",
+    "word_count": 58,
+    "category_id": 4,
+    "difficulty_level": "beginner"
+  },
+  
+  {
+    "title": "Perkembangan Kecerdasan Buatan",
+    "content": "Kecerdasan buatan (AI) telah berkembang pesat dalam beberapa tahun terakhir. Dari chatbot hingga kendaraan otonom, AI digunakan untuk mengotomatisasi tugas-tugas kompleks yang sebelumnya hanya bisa dilakukan manusia. Model bahasa besar, seperti yang digunakan dalam asisten virtual, menunjukkan kemampuan luar biasa dalam memahami dan menghasilkan bahasa alami. Dengan pelatihan data yang ekstensif dan arsitektur neural network yang canggih, AI kini semakin banyak diterapkan di bidang medis, keuangan, pendidikan, dan industri lainnya.",
+    "word_count": 70,
+    "category_id": 4,
+    "difficulty_level": "intermediate"
+  },
+  {
+    "title": "Cara Kerja Smartphone Modern",
+    "content": "Smartphone adalah perangkat multifungsi yang menggabungkan fungsi telepon, komputer, kamera, dan banyak lagi. Prosesor dalam smartphone mengatur semua operasi, dari membuka aplikasi hingga menjalankan sistem operasi. Layar sentuh berfungsi sebagai antarmuka utama pengguna, dan konektivitas nirkabel seperti Wi-Fi serta jaringan seluler memungkinkan akses internet di mana saja. Sistem operasi populer termasuk Android dan iOS, yang menyediakan ekosistem aplikasi luas.",
+    "word_count": 59,
+    "category_id": 4,
+    "difficulty_level": "intermediate"
+  },
+  {
+    "title": "Perkembangan Jaringan 5G",
+    "content": "Teknologi 5G menghadirkan kecepatan internet yang jauh lebih tinggi dibandingkan generasi sebelumnya. Selain kecepatan, latensi yang rendah memungkinkan komunikasi hampir seketika, penting bagi kendaraan otonom dan aplikasi real-time. 5G menggunakan spektrum frekuensi tinggi yang memungkinkan kapasitas data lebih besar, namun membutuhkan lebih banyak menara pemancar karena jangkauan sinyal yang lebih pendek.",
+    "word_count": 51,
+    "category_id": 4,
+    "difficulty_level": "intermediate"
+  },
+
+  {
+    "title": "Teknologi Wearable untuk Kesehatan",
+    "content": "Perangkat wearable seperti smartwatch kini dilengkapi dengan sensor canggih yang dapat memantau detak jantung, langkah kaki, dan kualitas tidur. Data ini membantu pengguna memahami kondisi fisik mereka secara real-time dan bahkan bisa digunakan dokter untuk diagnosis awal. Integrasi AI dalam wearable akan semakin meningkatkan fungsi prediktif dan preventif di bidang kesehatan modern.",
+    "word_count": 52,
+    "category_id": 4,
+    "difficulty_level": "intermediate"
+  },
+
+  {
+    "title": "Internet of Things (IoT) di Rumah Pintar",
+    "content": "Internet of Things memungkinkan perangkat rumah seperti lampu, kulkas, dan kamera keamanan terhubung ke internet dan dikendalikan secara jarak jauh. Melalui aplikasi ponsel, pengguna dapat mengatur suhu ruangan, menyalakan lampu, atau memeriksa kamera rumah dari mana saja. IoT menciptakan ekosistem rumah pintar yang efisien, hemat energi, dan responsif terhadap kebutuhan pengguna.",
+    "word_count": 51,
+    "category_id": 4,
+    "difficulty_level": "intermediate"
+  },
+
+  {
+    "title": "Prediksi Masa Depan Teknologi Augmented Reality",
+    "content": "Augmented Reality (AR) diperkirakan akan menjadi bagian penting dari kehidupan sehari-hari. Dengan bantuan perangkat seperti kacamata pintar, pengguna dapat melihat dunia nyata yang diperkaya dengan informasi digital. AR akan merevolusi cara kita belajar, berbelanja, dan bahkan berinteraksi sosial. Perusahaan besar sudah mulai mengembangkan platform AR untuk pendidikan, kesehatan, dan hiburan yang lebih imersif.",
+    "word_count": 53,
+    "category_id": 4,
+    "difficulty_level": "advanced"
+  },
+  {
+    "title": "Teknologi Blockchain di Luar Cryptocurrency",
+    "content": "Blockchain dikenal luas karena digunakan dalam mata uang kripto seperti Bitcoin, namun potensinya jauh lebih besar. Teknologi ini menawarkan sistem pencatatan yang transparan dan tidak dapat diubah, menjadikannya ideal untuk logistik, pemungutan suara digital, dan manajemen data kesehatan. Implementasi blockchain dapat mengurangi penipuan dan meningkatkan efisiensi proses di berbagai industri.",
+    "word_count": 50,
+    "category_id": 4,
+    "difficulty_level": "advanced"
+  },
+
+  {
+    "title": "Prediksi Masa Depan Kecerdasan Buatan Umum",
+    "content": "Para ilmuwan memperkirakan bahwa dalam beberapa dekade ke depan, kita akan melihat kemajuan menuju kecerdasan buatan umum (AGI), yaitu AI yang dapat melakukan berbagai tugas intelektual layaknya manusia. AGI akan membuka kemungkinan baru dalam penelitian ilmiah, eksplorasi luar angkasa, dan bahkan menciptakan teknologi yang lebih cerdas dari manusia itu sendiri. Namun, pertumbuhan ini juga menimbulkan pertanyaan etis dan risiko eksistensial.",
+    "word_count": 60,
+    "category_id": 4,
+    "difficulty_level": "advanced"
+  }
+
+]

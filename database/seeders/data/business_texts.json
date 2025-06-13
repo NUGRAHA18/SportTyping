@@ -1,0 +1,72 @@
+[
+  {
+    "title": "Studi Kasus Warung Kopi",
+    "content": "Warung kopi sederhana di pinggir jalan mampu menarik pelanggan tetap karena pelayanan yang ramah dan harga yang terjangkau. Pemiliknya fokus pada konsistensi rasa dan kebersihan tempat. Ini membuktikan bahwa bisnis kecil bisa bertahan dengan prinsip dasar yang kuat.",
+    "word_count": 38,
+    "category_id": 5,
+    "difficulty_level": "beginner"
+  },
+  {
+    "title": "Dasar-Dasar Ekonomi Mikro",
+    "content": "Ekonomi mikro mempelajari perilaku individu dan perusahaan dalam mengambil keputusan tentang alokasi sumber daya yang terbatas. Konsep seperti penawaran, permintaan, harga keseimbangan, dan elastisitas sangat penting untuk dipahami dalam dunia bisnis sehari-hari.",
+    "word_count": 32,
+    "category_id": 5,
+    "difficulty_level": "beginner"
+  },
+  {
+    "title": "Pentingnya Kepemimpinan",
+    "content": "Seorang pemimpin yang baik mampu mengarahkan tim menuju tujuan bersama. Kepemimpinan bukan hanya soal memberi perintah, tapi juga tentang mendengarkan, memberikan motivasi, serta menjadi teladan dalam etika kerja dan komunikasi efektif.",
+    "word_count": 31,
+    "category_id": 5,
+    "difficulty_level": "beginner"
+  },
+  {
+    "title": "Strategi Bisnis Ritel Modern",
+    "content": "Dalam bisnis ritel modern, pengalaman pelanggan menjadi kunci keberhasilan. Toko-toko kini menggabungkan strategi online dan offline (omnichannel) untuk menjangkau konsumen secara maksimal. Data pelanggan dianalisis untuk memahami kebutuhan dan pola belanja mereka.",
+    "word_count": 32,
+    "category_id": 5,
+    "difficulty_level": "intermediate"
+  },
+  {
+    "title": "Mengelola Arus Kas",
+    "content": "Arus kas yang sehat penting untuk kelangsungan bisnis. Pemilik usaha perlu mencatat pemasukan dan pengeluaran secara rinci agar tidak terjadi kekurangan dana operasional. Pengelolaan kas yang buruk dapat menyebabkan bisnis bangkrut meskipun menghasilkan keuntungan.",
+    "word_count": 34,
+    "category_id": 5,
+    "difficulty_level": "intermediate"
+  },
+  {
+    "title": "Inovasi dalam Kewirausahaan",
+    "content": "Inovasi merupakan inti dari kewirausahaan modern. Pengusaha yang sukses mampu mengenali masalah pasar dan menawarkan solusi baru. Contohnya adalah layanan berbasis aplikasi yang mempermudah akses pelanggan terhadap produk atau jasa dalam waktu singkat.",
+    "word_count": 33,
+    "category_id": 5,
+    "difficulty_level": "intermediate"
+  },
+  {
+    "title": "Dampak Globalisasi Terhadap Pasar Lokal",
+    "content": "Globalisasi membuka peluang pasar yang luas, namun juga membawa tantangan bagi pelaku usaha lokal. Mereka harus bersaing dengan produk asing yang seringkali lebih murah. Untuk bertahan, pelaku usaha perlu meningkatkan kualitas produk dan membangun merek yang kuat.",
+    "word_count": 37,
+    "category_id": 5,
+    "difficulty_level": "intermediate"
+  },
+  {
+    "title": "Transformasi Digital dalam Bisnis",
+    "content": "Transformasi digital menuntut perusahaan untuk mengadopsi teknologi dalam seluruh aspek operasionalnya. Ini mencakup penggunaan cloud computing, analitik data, dan kecerdasan buatan. Perusahaan yang lambat beradaptasi berisiko tertinggal dari pesaing yang lebih inovatif.",
+    "word_count": 32,
+    "category_id": 5,
+    "difficulty_level": "advance"
+  },
+  {
+    "title": "Etika Bisnis dan Tanggung Jawab Sosial",
+    "content": "Etika bisnis menuntut pelaku usaha untuk beroperasi secara jujur, adil, dan bertanggung jawab. Perusahaan juga semakin dituntut untuk memiliki program tanggung jawab sosial (CSR) yang berdampak positif bagi masyarakat dan lingkungan.",
+    "word_count": 31,
+    "category_id": 5,
+    "difficulty_level": "advance"
+  },
+  {
+    "title": "Membangun Organisasi yang Agile",
+    "content": "Agility dalam organisasi memungkinkan perusahaan untuk cepat beradaptasi terhadap perubahan pasar. Ini membutuhkan budaya kerja kolaboratif, struktur organisasi yang datar, serta pengambilan keputusan yang terdesentralisasi untuk meningkatkan responsivitas dan inovasi.",
+    "word_count": 30,
+    "category_id": 5,
+    "difficulty_level": "advance"
+  }
+]

@@ -1,0 +1,389 @@
+    [
+    {
+        "key": "`",
+        "finger": "kelingking kiri",
+        "hand": "kiri",
+        "description": "Tombol backtick (`) ditekan dengan kelingking kiri. Biasanya berada di sebelah kiri atas keyboard, di atas tombol Tab.",
+        "practice_text": "` ` ` ` ` kode contoh `script` `variable` `function`"
+    },
+    {
+        "key": "1",
+        "finger": "kelingking kiri",
+        "hand": "kiri",
+        "description": "Tombol 1 ditekan dengan kelingking kiri.",
+        "practice_text": "1 1 1 1 11 12 13 11 2 1 1"
+    },
+    {
+        "key": "2",
+        "finger": "jari manis kiri",
+        "hand": "kiri",
+        "description": "Tombol 2 ditekan dengan jari manis kiri.",
+        "practice_text": "2 2 2 2 23 22 21 24 22 2 2 1 2 "
+    },
+    {
+        "key": "3",
+        "finger": "jari tengah kiri",
+        "hand": "kiri",
+        "description": "Tombol 3 ditekan dengan jari tengah kiri.",
+        "practice_text": "3 3 3 3 3 3 2 3 23 32 34 3 4 3 43 "
+    },
+    {
+        "key": "4",
+        "finger": "jari telunjuk kiri",
+        "hand": "kiri",
+        "description": "Tombol 4 ditekan dengan jari telunjuk kiri.",
+        "practice_text": "4 4 4 4 4 43 41 44 45 43 42 4 4 4 "
+    },
+    {
+        "key": "5",
+        "finger": "jari telunjuk kiri",
+        "hand": "kiri",
+        "description": "Tombol 5 ditekan dengan jari telunjuk kiri.",
+        "practice_text": "5 5 5 5 5 54 56 54 545 55 53 56 5 5 "
+    },
+    {
+        "key": "6",
+        "finger": "jari telunjuk kanan",
+        "hand": "kanan",
+        "description": "Tombol 6 ditekan dengan jari telunjuk kanan.",
+        "practice_text": "6 6 6 6 6 6 65 66 67 6 1 6 8 65 66"
+    },
+    {
+        "key": "7",
+        "finger": "jari telunjuk kanan",
+        "hand": "kanan",
+        "description": "Tombol 7 ditekan dengan jari telunjuk kanan.",
+        "practice_text": "7 7 7 7 76 7 67 7 6 8 7 7 87 7 6 7 "
+    },
+    {
+        "key": "8",
+        "finger": "jari tengah kanan",
+        "hand": "kanan",
+        "description": "Tombol 8 ditekan dengan jari tengah kanan.",
+        "practice_text": "8 8 8 8 8 87 7 7 87 89 9 8 88 7 8 8 "
+    },
+    {
+        "key": "9",
+        "finger": "jari manis kanan",
+        "hand": "kanan",
+        "description": "Tombol 9 ditekan dengan jari manis kanan.",
+        "practice_text": "9 9 9 9 9 9 9 98 0 0 79 89 8 99 9 9"
+    },
+    {
+        "key": "0",
+        "finger": "jari kelingking kanan",
+        "hand": "kanan",
+        "description": "Tombol 0 ditekan dengan jari kelingking kanan.",
+        "practice_text": "0 0 0 0 0 0 0 0 9 0 o 0 7 09 90 0 - 0  0"
+    },
+    {
+        "key": "-",
+        "finger": "jari kelingking kanan",
+        "hand": "kanan",
+        "description": "Tombol tanda minus (-) ditekan dengan kelingking kanan. Biasanya terletak di baris atas, sebelah kanan tombol angka 0.",
+        "practice_text": "- - - gunakan tanda minus untuk menghubungkan kata atau angka, seperti 5-10, 2024-2025."
+    },
+    {
+        "key": "=",
+        "finger": "kelingking kanan",
+        "hand": "kanan",
+        "description": "Tombol sama dengan (=) ditekan dengan kelingking kanan. Biasanya terletak di baris atas, sebelah kanan tombol tanda minus (-).",
+        "practice_text": "= = = latihan penulisan ekspresi matematika: a = b + c, x = y - z"
+    },
+
+    {
+        "key": "backspace",
+        "finger": "kelingking kanan",
+        "hand": "kanan",
+        "description": "Tombol Backspace ditekan dengan kelingking kanan. Fungsinya untuk menghapus karakter di sebelah kiri kursor saat mengetik.",
+        "practice_text": "Gunakan Backspace untuk menghapus kesalahan ketik secara cepat."
+    },
+    {
+        "key": "tab",
+        "finger": "kelingking kiri",
+        "hand": "kiri",
+        "description": "Tombol Tab ditekan dengan kelingking kiri. Biasanya digunakan untuk membuat indentasi atau berpindah ke kolom berikutnya dalam formulir atau tabel.",
+        "practice_text": "Gunakan tombol Tab untuk pindah ke kolom berikutnya saat mengisi formulir."
+    },
+    {
+        "key": "q",
+        "finger": "jari kelingking kiri",
+        "hand": "kiri",
+        "description": "Tombol Q ditekan dengan jari kelingking kiri.",
+        "practice_text": "q q q q q qoriq cepat queri quda, queri quda cepat qoriq."
+    },
+    {
+        "key": "w",
+        "finger": "jari manis kiri",
+        "hand": "kiri",
+        "description": "Tombol w ditekan dengan jari manis kiri.",
+        "practice_text": "w w w w w wawan wira-wiri membawa wortel, wortel wawan walau wangi, walau wira-wiri."
+    },
+    {
+        "key": "e",
+        "finger": "jari tengah kiri",
+        "hand": "kiri",
+        "description": "Tombol e ditekan dengan jari tengah kiri.",
+        "practice_text": "e e e e e eka enak-enak mengecek es, es enak sekali, Eka cepat-cepat mengecek es"
+    },
+    {
+        "key": "r",
+        "finger": "jari telunjuk kiri",
+        "hand": "kiri",
+        "description": "Tombol r ditekan dengan jari telunjuk kiri.",
+        "practice_text": "r r r r r rara rajin merawat rerumputan, rerumputan rapi, Rara terus merawat rerumputan."
+    },
+    {
+        "key": "t",
+        "finger": "jari telunjuk kiri",
+        "hand": "kiri",
+        "description": "Tombol t ditekan dengan jari telunjuk kiri.",
+        "practice_text": "t t t t t tito tukang tato terus latihan, tato Tito tampak tepat dan tajam."
+    },
+    {
+        "key": "y",
+        "finger": "jari telunjuk kanan",
+        "hand": "kanan",
+        "description": "Tombol y ditekan dengan jari telunjuk kanan.",
+        "practice_text": "y y y y y yuyu yang yakin yakin yel-yel, yel-yel yuyu yang yakin."
+        },
+    {
+        "key": "u",
+        "finger": "jari telunjuk kanan",
+        "hand": "kanan",
+        "description": "Tombol u ditekan dengan jari telunjuk kanan.",
+        "practice_text": "u u u u u ucup ucap ucapan unik untuk ulang tahun umi"
+    },
+    {
+        "key": "i",
+        "finger": "jari tengah kanan",
+        "hand": "kanan",
+        "description": "Tombol i ditekan dengan jari tengah kanan.",
+        "practice_text": "i i i i i ini itu ibu Iri, iri hati lihat Ina ikut ibadah."
+    },
+    {
+        "key": "o",
+        "finger": "jari manis kanan",
+        "hand": "kanan",
+        "description": "Tombol o ditekan dengan jari manis kanan.",
+        "practice_text": "o o o o o ono orang-orang obral obat-obatan, obat-obatan ono obral orang-orang."
+    },
+    {
+        "key": "p",
+        "finger": "jari kelingking kanan",
+        "hand": "kanan",
+        "description": "Tombol p ditekan dengan jari kelingking kanan.",
+        "practice_text": "p p p p p pipit pintar memilih pisang, pisang pipit penuh pepaya."
+    },
+    {
+        "key": "[",
+        "finger": "kelingking kanan",
+        "hand": "kanan",
+        "description": "Tombol tanda kurung buka ([) ditekan dengan kelingking kanan. Biasanya terletak di baris atas, sebelah kanan tombol P.",
+        "practice_text": "[ [ [ kode contoh: [array], [index], [parameter]"
+    },
+    {
+        "key": "]",
+        "finger": "kelingking kanan",
+        "hand": "kanan",
+        "description": "Tombol tanda kurung tutup (]) ditekan dengan kelingking kanan. Terletak di sebelah kanan tombol tanda kurung buka ([) di baris atas.",
+        "practice_text": "] ] ] contoh penggunaan: array[index], function(param])"
+    },
+    {
+        "key": "\\",
+        "finger": "kelingking kanan",
+        "hand": "kanan",
+        "description": "Tombol backslash (\\) ditekan dengan kelingking kanan. Biasanya terletak di baris atas atau baris tengah, tergantung tipe keyboard, di sebelah kanan tombol tanda kurung tutup (]).",
+        "practice_text": "\\ \\ \\ contoh penggunaan: path\\folder\\file"
+    },
+    {
+        "key": "caps lock",
+        "finger": "kelingking kiri",
+        "hand": "kiri",
+        "description": "Tombol Caps Lock ditekan dengan kelingking kiri. Tombol ini berfungsi untuk mengaktifkan atau menonaktifkan pengetikan huruf kapital secara terus-menerus tanpa harus menekan Shift.",
+        "practice_text": "Tekan Caps Lock untuk mengetik huruf kapital tanpa menahan tombol Shift."
+    },
+    {
+        "key": "a",
+        "finger": "jari kelingking kiri",
+        "hand": "kiri",
+        "description": "Tombol A ditekan dengan jari kelingking kiri. Dari posisi dasar, jari ini bergerak sedikit ke kiri.",
+        "practice_text": "a a a a a aku anak aman awal arti atas akhir ajak angin api alat"
+    },
+    {
+        "key": "s",
+        "finger": "jari manis kiri",
+        "hand": "kiri",
+        "description": "Tombol S ditekan dengan jari manis kiri. Jari ini berada di atas tombol S saat dalam posisi dasar.",
+        "practice_text": "s s s s s satu sini saat sore sulit selalu semua siapa sungai simpan"
+    },
+    {
+        "key": "d",
+        "finger": "jari tengah kiri",
+        "hand": "kiri",
+        "description": "Tombol D ditekan dengan jari tengah kiri. Dari posisi dasar, jari ini tetap di tempatnya.",
+        "practice_text": "d d d d d dari dalam darah dasar dunia duduk datang di dua dapat"
+    },
+    {
+        "key": "f",
+        "finger": "jari telunjuk kiri",
+        "hand": "kiri",
+        "description": "Tombol F ditekan dengan jari telunjuk kiri. Ini adalah posisi dasar jari telunjuk kiri, biasanya memiliki tonjolan kecil untuk panduan sentuhan.",
+        "practice_text": "f f f f f fakta foto fokus fisik film fitur fungsi final forum"
+    },
+    {
+        "key": "g",
+        "finger": "jari telunjuk kiri",
+        "hand": "kiri",
+        "description": "Tombol G ditekan dengan jari telunjuk kiri. Dari posisi dasar (tombol F), jari ini bergerak satu langkah ke kanan.",
+        "practice_text": "g g g g g garis gagal gaya gigi ganti gula ganggu gajah gotong"
+    },
+    {
+        "key": "h",
+        "finger": "jari telunjuk kanan",
+        "hand": "kanan",
+        "description": "Tombol H ditekan dengan jari telunjuk kanan. Dari posisi dasar (tombol J), jari ini bergerak satu langkah ke kiri.",
+        "practice_text": "h h h h h hati hari hingga hanya hidup harus halus hijau harum"
+    },
+    {
+        "key": "j",
+        "finger": "jari telunjuk kanan",
+        "hand": "kanan",
+        "description": "Tombol J ditekan dengan jari telunjuk kanan. Ini adalah posisi dasar jari telunjuk kanan, biasanya memiliki tonjolan kecil untuk panduan sentuhan.",
+        "practice_text": "j j j j j jalan jauh jadi juga jawab jendela jarak jelas jemari"
+    },
+    {
+        "key": "k",
+        "finger": "jari tengah kanan",
+        "hand": "kanan",
+        "description": "Tombol K ditekan dengan jari tengah kanan. Jari ini tetap berada di posisi dasar.",
+        "practice_text": "k k k k k kita kamu kaca karya kuat kelas kecil kirim kata"
+    },
+    {
+        "key": "l",
+        "finger": "jari manis kanan",
+        "hand": "kanan",
+        "description": "Tombol L ditekan dengan jari manis kanan. Jari ini tetap di tempatnya dalam posisi dasar.",
+        "practice_text": "l l l l l lalu lama lihat lain lanjut listrik lukis lari lebar"
+    },
+    { 
+        "key": ";",
+        "finger": "jari kelingking kanan",
+        "hand": "kanan",
+        "description": "Tombol titik koma (;) ditekan dengan jari kelingking kanan. Terletak di baris tengah, sebelah kanan tombol L.",
+        "practice_text": "; ; ; contoh kalimat: ini adalah contoh; kamu harus belajar; terus latihan."
+    },
+    {
+        "key": "'",
+        "finger": "kelingking kanan",
+        "hand": "kanan",
+        "description": "Tombol apostrof (') ditekan dengan kelingking kanan. Biasanya berada di sebelah kanan tombol titik koma (;) pada baris tengah keyboard.",
+        "practice_text": "' ' ' ' ' contoh kata: jangan 'tidak' boleh 'ragu' 'selalu' percaya"
+    },
+    {
+        "key": "enter",
+        "finger": "kelingking kanan",
+        "hand": "kanan",
+        "description": "Tombol Enter ditekan dengan kelingking kanan. Dari posisi dasar, jari ini bergerak ke kanan atas untuk menekan Enter, biasanya digunakan untuk mengakhiri baris atau mengirim perintah.",
+        "practice_text": "Ketik kalimat lalu tekan Enter untuk pindah ke baris baru.\nLatihan:\nHalo dunia! <enter>\nSaya sedang belajar mengetik. <enter>"
+    },
+    {
+        "key": "shift",
+        "finger": "kelingking",
+        "hand": "kiri atau kanan",
+        "description": "Tombol Shift ditekan dengan kelingking tangan yang tidak sedang digunakan untuk mengetik huruf. Misalnya, jika mengetik huruf dengan tangan kanan, maka Shift ditekan dengan kelingking kiri, dan sebaliknya.",
+        "practice_text": "Gunakan Shift untuk mengetik huruf kapital: A B C D E F G H I J"
+    }, 
+    {
+        "key": "z",
+        "finger": "kelingking kiri",
+        "hand": "kiri",
+        "description": "Tombol Z ditekan dengan kelingking kiri. Dari posisi dasar, jari ini turun ke baris bawah.",
+        "practice_text": "z z z z z zaman zakat zikir ziarah zona zalim zigzag zoom"
+    },
+    {
+        "key": "x",
+        "finger": "jari manis kiri",
+        "hand": "kiri",
+        "description": "Tombol X ditekan dengan jari manis kiri. Jari ini turun dari tombol S ke baris bawah.",
+        "practice_text": "x x x x x xenon xenia xtra xerox xylophone xbox xpress"
+    },
+    {
+        "key": "c",
+        "finger": "jari tengah kiri",
+        "hand": "kiri",
+        "description": "Tombol C ditekan dengan jari tengah kiri. Dari tombol D, jari ini turun satu baris.",
+        "practice_text": "c c c c c coba cinta cara cetak curam cipta cukup cepat catat"
+    },
+    {
+        "key": "v",
+        "finger": "jari telunjuk kiri",
+        "hand": "kiri",
+        "description": "Tombol V ditekan dengan jari telunjuk kiri. Dari tombol F, jari ini turun ke baris bawah.",
+        "practice_text": "v v v v v virus video vokal visual volume versi versi variasi"
+    },
+    {
+        "key": "b",
+        "finger": "jari telunjuk kiri",
+        "hand": "kiri",
+        "description": "Tombol B ditekan dengan jari telunjuk kiri. Ini merupakan tombol tengah antara tangan kiri dan kanan.",
+        "practice_text": "b b b b b baik besar buat bila baru bulan buka bantu balik"
+    },
+    {
+        "key": "n",
+        "finger": "jari telunjuk kanan",
+        "hand": "kanan",
+        "description": "Tombol N ditekan dengan jari telunjuk kanan. Dari tombol J, jari ini turun ke baris bawah.",
+        "practice_text": "n n n n n nama nanti nyata naik nomor nilai nyata nadi naik"
+    },
+    {
+        "key": "m",
+        "finger": "jari tengah kanan",
+        "hand": "kanan",
+        "description": "Tombol M ditekan dengan jari tengah kanan. Dari tombol K, jari ini turun satu baris.",
+        "practice_text": "m m m m m makan minum main mana masuk mimpi marah mampu mudah"
+    },
+    {
+        "key": ",",
+        "finger": "jari tengah kanan",
+        "hand": "kanan",
+        "description": "Tombol koma (,) ditekan dengan jari tengah kanan. Dari posisi dasar pada tombol K, jari ini turun ke baris bawah sedikit ke kanan.",
+        "practice_text": ", , , , , kamu, saya, dia, mereka, pagi, siang, malam, senin, rabu,"
+    },
+    {
+        "key": ".",
+        "finger": "jari manis kanan",
+        "hand": "kanan",
+        "description": "Tombol titik (.) ditekan dengan jari manis kanan. Dari posisi dasar pada tombol L, jari ini turun ke baris bawah sedikit ke kanan.",
+        "practice_text": ". . . . . saya pergi. dia datang. ini akhir. waktu habis. selesai."
+    },
+    {
+        "key": "/",
+        "finger": "kelingking kanan",
+        "hand": "kanan",
+        "description": "Tombol garis miring (/) ditekan dengan kelingking kanan. Dari posisi dasar, jari ini bergerak ke kanan bawah pada baris bawah di sebelah kanan tombol titik.",
+        "practice_text": "/ / / / / /home /login /user/profile /help /about"
+    },
+    {
+        "key": "ctrl",
+        "finger": "kelingking",
+        "hand": "kiri atau kanan",
+        "description": "Tombol Ctrl ditekan dengan kelingking tangan kiri atau kanan, tergantung posisi yang paling nyaman. Biasanya digunakan bersamaan dengan tombol lain untuk menjalankan perintah pintas seperti Ctrl+C untuk menyalin.",
+        "practice_text": "Gunakan Ctrl dengan kombinasi tombol lain: Ctrl+C, Ctrl+V, Ctrl+Z, Ctrl+S, Ctrl+P"
+    },
+    {
+        "key": "alt",
+        "finger": "ibu jari (jempol)",
+        "hand": "kiri atau kanan",
+        "description": "Tombol Alt biasanya ditekan dengan ibu jari kiri atau kanan, tergantung tangan mana yang tidak digunakan untuk menekan tombol kombinasi lainnya. Alt sering digunakan bersama tombol lain untuk pintasan keyboard seperti Alt+Tab atau Alt+F4.",
+        "practice_text": "Coba kombinasi: Alt+Tab, Alt+F4, Alt+Shift, Alt+Enter"
+    },
+    {
+        "key": "space",
+        "finger": "ibu jari (jempol)",
+        "hand": "kiri atau kanan",
+        "description": "Tombol spasi ditekan dengan ibu jari kiri atau kanan, tergantung kebiasaan. Biasanya ibu jari kanan lebih sering digunakan untuk menekan spasi saat mengetik cepat.",
+        "practice_text": "latihan mengetik dengan spasi yang tepat antara kata satu dan kata lain"
+    }
+
+]

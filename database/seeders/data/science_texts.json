@@ -1,0 +1,72 @@
+[
+  {
+    "title": "Siklus Air di Alam",
+    "content": "Siklus air dimulai ketika air dari laut, sungai, dan danau menguap karena panas matahari. Uap air naik ke atmosfer dan membentuk awan. Ketika awan menjadi jenuh, hujan turun kembali ke bumi. Proses ini terus berulang dan menjaga keseimbangan air di planet kita.",
+    "word_count": 42,
+    "category_id": 3,
+    "difficulty_level": "beginner"
+  },
+  {
+    "title": "Pelangi dan Pembiasan Cahaya",
+    "content": "Pelangi terjadi karena cahaya matahari dibiaskan, dipantulkan, dan diuraikan oleh tetesan air hujan di atmosfer. Proses ini membagi cahaya putih menjadi spektrum warna. Warna pelangi terdiri dari merah, jingga, kuning, hijau, biru, nila, dan ungu, membentuk busur indah di langit.",
+    "word_count": 40,
+    "category_id": 3,
+    "difficulty_level": "beginner"
+  },
+  {
+    "title": "Eksperimen Tanaman dan Cahaya",
+    "content": "Salah satu eksperimen sains yang sederhana adalah mengamati pengaruh cahaya terhadap pertumbuhan tanaman. Letakkan dua pot tanaman, satu di tempat terang dan satu di tempat gelap. Setelah beberapa hari, tanaman yang mendapat cahaya akan tumbuh lebih cepat karena proses fotosintesis berlangsung lebih optimal.",
+    "word_count": 43,
+    "category_id": 3,
+    "difficulty_level": "intermediate"
+  },
+  {
+    "title": "Struktur Sel Makhluk Hidup",
+    "content": "Setiap makhluk hidup tersusun dari unit dasar bernama sel. Sel memiliki bagian penting seperti inti sel, membran sel, dan sitoplasma. Inti sel mengatur aktivitas, sementara membran melindungi isi sel. Struktur ini memungkinkan organisme hidup menjalankan fungsi biologis dengan efisien dan teratur.",
+    "word_count": 41,
+    "category_id": 3,
+    "difficulty_level": "intermediate"
+  },
+  {
+    "title": "Prinsip Hukum Newton Kedua",
+    "content": "Hukum Newton kedua menyatakan bahwa percepatan suatu benda berbanding lurus dengan gaya yang bekerja padanya dan berbanding terbalik dengan massanya. Rumus yang digunakan adalah F = m x a. Konsep ini penting untuk memahami pergerakan dan dinamika benda dalam fisika klasik.",
+    "word_count": 41,
+    "category_id": 3,
+    "difficulty_level": "intermediate"
+  },
+  {
+    "title": "Biografi Marie Curie",
+    "content": "Marie Curie adalah ilmuwan wanita pertama yang meraih dua Nobel di bidang Fisika dan Kimia. Ia menemukan dua unsur radioaktif, yaitu polonium dan radium. Penelitiannya tentang radioaktivitas membuka jalan bagi pengembangan terapi kanker modern. Curie juga dikenal karena semangat dan dedikasinya dalam dunia sains.",
+    "word_count": 44,
+    "category_id": 3,
+    "difficulty_level": "intermediate"
+  },
+  {
+    "title": "Lapisan Atmosfer dan Fungsinya",
+    "content": "Atmosfer bumi terdiri atas lima lapisan utama: troposfer, stratosfer, mesosfer, termosfer, dan eksosfer. Troposfer adalah tempat terjadinya cuaca. Stratosfer mengandung ozon yang menyerap sinar ultraviolet. Lapisan-lapisan ini berperan penting dalam melindungi kehidupan dan mendukung proses alami di bumi.",
+    "word_count": 38,
+    "category_id": 3,
+    "difficulty_level": "advanced"
+  },
+  {
+    "title": "Relativitas Waktu dan Ruang",
+    "content": "Teori relativitas khusus yang dikembangkan Albert Einstein menyatakan bahwa waktu dan ruang tidak bersifat mutlak. Kecepatan cahaya adalah konstan, dan waktu bisa melambat ketika suatu objek bergerak sangat cepat. Konsep ini mengubah cara kita memahami alam semesta dan gerakan benda langit.",
+    "word_count": 41,
+    "category_id": 3,
+    "difficulty_level": "advanced"
+  },
+  {
+    "title": "Percobaan Elektromagnetik Faraday",
+    "content": "Michael Faraday membuktikan bahwa perubahan medan magnet dapat menghasilkan arus listrik melalui kawat penghantar. Eksperimen ini menjadi dasar dari teknologi generator listrik. Penemuan Faraday sangat berpengaruh terhadap perkembangan industri modern dan prinsip kerja peralatan elektronik saat ini.",
+    "word_count": 37,
+    "category_id": 3,
+    "difficulty_level": "advanced"
+  },
+  {
+    "title": "Mutasi dan Evolusi Genetik",
+    "content": "Mutasi genetik adalah perubahan acak pada urutan DNA suatu organisme. Sebagian mutasi bersifat netral, tapi ada juga yang berpengaruh terhadap fungsi gen. Dalam jangka panjang, mutasi menjadi bahan bakar utama dalam proses evolusi, memungkinkan makhluk hidup beradaptasi terhadap lingkungan yang berubah.",
+    "word_count": 41,
+    "category_id": 3,
+    "difficulty_level": "advanced"
+  }
+]

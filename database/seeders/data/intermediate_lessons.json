@@ -1,0 +1,122 @@
+[
+  {
+    "title": "Membangun Kecepatan - Kata Umum",
+    "content": "Fokus pada peningkatan kecepatan mengetik dengan kata-kata yang sering digunakan. Ketik setiap kata 10 kali secepat mungkin sambil mempertahankan akurasi: tentang, setelah, lagi, terhadap, meskipun, lainnya, karena, sebelum, antara, berbeda, contoh, berikut, namun, penting, termasuk, informasi, minat, tidak, nomor, lain, orang, pribadi, mungkin, masalah, program, pertanyaan, agak, benar-benar, benar, harus, sesuatu, masih, sistem, mereka, ada, ini, pikir, meskipun, melalui, bawah, sampai, air, dimana, yang, sementara, tanpa, dunia, akan, menulis, tahun, muda",
+    "difficulty_level": "intermediate",
+    "order_number": 1,
+    "estimated_completion_time": 25,
+    "experience_reward": 150
+  },
+  {
+    "title": "Penguasaan Baris Angka",
+    "content": "Kuasai tombol-tombol baris angka 1-0. Gunakan jari yang benar: 1(kelingking), 2(manis), 3(tengah), 4(telunjuk), 5(telunjuk) untuk tangan kiri; 6(telunjuk), 7(telunjuk), 8(tengah), 9(manis), 0(kelingking) untuk tangan kanan. Berlatih: 1234567890 1234567890. Kemudian coba kombinasi: 12, 34, 56, 78, 90, 135, 246, 789, 159, 357",
+    "difficulty_level": "intermediate",
+    "order_number": 2,
+    "estimated_completion_time": 30,
+    "experience_reward": 175
+  },
+  {
+    "title": "Karakter Khusus - Simbol Dasar",
+    "content": "Belajar mengetik simbol dasar menggunakan Shift + tombol angka. Berlatih: ! @ # $ % ^ & * ( ). Ingat untuk menggunakan tombol Shift tangan yang berlawanan. Ketik kombinasi ini: Rp100.000, 50%, pengguna@email.com, (021) 123-4567, *penting*, #hashtag, &lagi, ^pangkat",
+    "difficulty_level": "intermediate",
+    "order_number": 3,
+    "estimated_completion_time": 30,
+    "experience_reward": 175
+  },
+  {
+    "title": "Penguasaan Tanda Baca",
+    "content": "Sempurnakan mengetik tanda baca Anda: titik (.), koma (,), titik koma (;), titik dua (:), apostrof ('), tanda kutip (\"), tanda tanya (?), tanda seru (!). Berlatih kalimat: 'Halo, apa kabar?' 'Saya baik, terima kasih!' 'Itu bagus; mari kita lanjutkan.' 'Inilah yang akan kita lakukan: berlatih, berlatih, berlatih!'",
+    "difficulty_level": "intermediate",
+    "order_number": 4,
+    "estimated_completion_time": 25,
+    "experience_reward": 150
+  },
+  {
+    "title": "Simbol Pemrograman - Kurung",
+    "content": "Kuasai kurung dan tanda kurung pemrograman: [ ] { } ( ) < >. Berlatih mengetik konstruksi pemrograman ini: array[indeks], {objek: nilai}, fungsi(parameter), <tag>konten</tag>. Fokus pada posisi jari yang tepat untuk setiap simbol.",
+    "difficulty_level": "intermediate",
+    "order_number": 5,
+    "estimated_completion_time": 25,
+    "experience_reward": 150
+  },
+  {
+    "title": "Simbol Pemrograman - Operator",
+    "content": "Pelajari operator pemrograman: + - * / = == != <= >= && || ! ++ -- += -= *=. Berlatih ekspresi seperti kode: x = y + z; if (a == b && c != d); counter++; result *= factor; isValid = !isEmpty || hasContent;",
+    "difficulty_level": "intermediate",
+    "order_number": 6,
+    "estimated_completion_time": 30,
+    "experience_reward": 175
+  },
+  {
+    "title": "Latihan Kecepatan - Paragraf",
+    "content": "Ketik paragraf ini secepat dan seakurat mungkin: 'Pengembangan keterampilan mengetik sentuh memerlukan latihan yang konsisten dan dedikasi. Saat Anda maju melalui tingkat menengah, fokus pada membangun memori otot sambil mempertahankan akurasi. Kecepatan akan meningkat secara alami saat jari-jari Anda menjadi lebih familiar dengan posisi tombol dan kombinasi huruf yang umum. Ingat bahwa mengetik berkualitas adalah tentang kecepatan dan presisi.'",
+    "difficulty_level": "intermediate",
+    "order_number": 7,
+    "estimated_completion_time": 35,
+    "experience_reward": 200
+  },
+  {
+    "title": "Konten Campuran - Teks dan Angka",
+    "content": "Berlatih mengetik konten yang mencampur teks dan angka: 'Rapat dijadwalkan pada 15 Maret 2024, pukul 14:30 di Ruang 205. Kita perlu meninjau 3 proposal, membahas anggaran Rp450.000.000, dan merencanakan untuk Q4 2024. Silakan bawa dokumen A-1, B-2, dan C-3. Hubungi John di (021) 123-4567 atau email@perusahaan.com untuk pertanyaan.'",
+    "difficulty_level": "intermediate",
+    "order_number": 8,
+    "estimated_completion_time": 35,
+    "experience_reward": 200
+  },
+  {
+    "title": "Akurasi di Bawah Tekanan",
+    "content": "Fokus pada mempertahankan akurasi sambil mengetik dengan cepat. Ketik kata-kata yang menantang ini yang umumnya menyebabkan kesalahan: perlu, pasti, terpisah, terjadi, mulai, menerima, pemerintah, lingkungan, pengembangan, manajemen, mandiri, sesuai, signifikan, profesional, memahami, pengalaman, berbeda, penting, tersedia, khusus, berhasil, individu, menarik, sulit",
+    "difficulty_level": "intermediate",
+    "order_number": 9,
+    "estimated_completion_time": 30,
+    "experience_reward": 175
+  },
+  {
+    "title": "Potongan Kode - Dasar",
+    "content": "Berlatih mengetik struktur kode dasar: 'function hitungTotal(harga, pajak) { return harga * (1 + pajak); } const pengguna = { nama: \"John\", umur: 30, email: \"john@example.com\" }; if (pengguna.umur >= 18) { console.log(\"Pengguna dewasa\"); } else { console.log(\"Pengguna di bawah umur\"); }'",
+    "difficulty_level": "intermediate",
+    "order_number": 10,
+    "estimated_completion_time": 35,
+    "experience_reward": 200
+  },
+  {
+    "title": "Email dan Konten Web",
+    "content": "Berlatih mengetik konten email dan web yang umum: 'Subjek: Update Proyek - Fase 1 Selesai. Tim yang terhormat, Saya dengan senang hati mengumumkan bahwa Fase 1 proyek kita sekarang telah selesai. Pencapaian utama meliputi: • 95% tugas selesai sesuai jadwal • Pemanfaatan anggaran 88% • Metrik kualitas terlampaui 12%. Langkah selanjutnya: Kickoff Fase 2 pada Senin pukul 09:00. Salam hormat, Manajer Proyek'",
+    "difficulty_level": "intermediate",
+    "order_number": 11,
+    "estimated_completion_time": 40,
+    "experience_reward": 225
+  },
+  {
+    "title": "Tes Kecepatan - Target 40 KPM",
+    "content": "Tes mengetik berwaktu dengan target 40+ kata per menit. Ketik: 'Mengetik sentuh menjadi semakin penting di dunia digital kita. Baik Anda seorang siswa, profesional, atau pengguna komputer kasual, kemampuan mengetik dengan cepat dan akurat dapat meningkatkan produktivitas Anda secara signifikan. Berlatih secara teratur, fokus pada teknik yang tepat, dan secara bertahap tingkatkan kecepatan Anda sambil mempertahankan tingkat akurasi yang tinggi.'",
+    "difficulty_level": "intermediate",
+    "order_number": 12,
+    "estimated_completion_time": 30,
+    "experience_reward": 175
+  },
+  {
+    "title": "Tanda Baca Kompleks",
+    "content": "Kuasai tanda baca kompleks dalam konteks: 'CEO mengumumkan: \"Hasil Q3 kami menunjukkan pertumbuhan yang mengesankan—peningkatan pendapatan 25%, peningkatan kepuasan pelanggan 18%, dan peningkatan retensi karyawan 30%.\" Dia menambahkan, \"Kesuksesan ini milik semua orang; kontribusi setiap anggota tim penting.\" Penonton bertepuk tangan antusias (standing ovation berlangsung 2+ menit).'",
+    "difficulty_level": "intermediate",
+    "order_number": 13,
+    "estimated_completion_time": 35,
+    "experience_reward": 200
+  },
+  {
+    "title": "Dokumentasi Teknis",
+    "content": "Berlatih gaya penulisan teknis: 'Persyaratan Sistem: OS: Windows 10+ atau macOS 10.15+; RAM: 8GB minimum (16GB direkomendasikan); Storage: 500GB SSD; Network: Koneksi broadband (25+ Mbps). Instalasi: 1) Unduh installer dari website resmi, 2) Jalankan setup.exe sebagai administrator, 3) Ikuti petunjuk di layar, 4) Restart sistem saat diminta, 5) Luncurkan aplikasi dan selesaikan konfigurasi awal.'",
+    "difficulty_level": "intermediate",
+    "order_number": 14,
+    "estimated_completion_time": 40,
+    "experience_reward": 225
+  },
+  {
+    "title": "Penilaian Menengah",
+    "content": "Penilaian menengah komprehensif yang menggabungkan semua keterampilan: 'Selamat karena telah mencapai tingkat menengah! Anda telah menguasai angka (0-9), karakter khusus (!@#$%^&*()), simbol pemrograman ([]{}<>=+-*/), dan tanda baca kompleks. Target kecepatan Anda harus 35-45 KPM dengan akurasi 95%+. Terus berlatih setiap hari selama 15-20 menit untuk mempertahankan dan meningkatkan keterampilan Anda. Ingat: konsistensi mengalahkan intensitas dalam pengembangan keterampilan.'",
+    "difficulty_level": "intermediate",
+    "order_number": 15,
+    "estimated_completion_time": 45,
+    "experience_reward": 250
+  }
+]

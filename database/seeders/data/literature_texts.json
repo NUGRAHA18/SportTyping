@@ -1,0 +1,72 @@
+[
+  {
+    "title": "Sepenggal Puisi Pagi",
+    "content": "Mentari pagi menyapa lembut dedaunan yang masih basah oleh embun. Angin kecil menari di antara bunga-bunga yang mekar perlahan.",
+    "word_count": 19,
+    "category_id": 2,
+    "difficulty_level": "beginner"
+  },
+  {
+    "title": "Kutipan Laskar Pelangi",
+    "content": "\"Bermimpilah, karena Tuhan akan memeluk mimpi-mimpimu,\" tulis Andrea Hirata dalam novel Laskar Pelangi. Kalimat ini menyulut semangat para pembacanya untuk terus berharap dan berjuang.",
+    "word_count": 24,
+    "category_id": 2,
+    "difficulty_level": "beginner"
+  },
+  {
+    "title": "Tentang Sebuah Rindu",
+    "content": "Rindu itu seperti hujan yang turun tiba-tiba. Tak bisa dihindari, hanya bisa dinikmati atau ditangisi.",
+    "word_count": 15,
+    "category_id": 2,
+    "difficulty_level": "beginner"
+  },
+  {
+    "title": "Langit dalam Prosa",
+    "content": "Langit sore mengubah wajahnya perlahan, dari biru jernih menjadi jingga lembut, seperti lukisan yang diciptakan dengan sapuan perasaan dan waktu.",
+    "word_count": 20,
+    "category_id": 2,
+    "difficulty_level": "intermediate"
+  },
+  {
+    "title": "Refleksi Sebuah Senja",
+    "content": "Senja tidak pernah gagal mengingatkanku akan kefanaan. Setiap warna yang berubah di langit membawa pesan bahwa semua hal indah pun harus berakhir, agar esok bisa dimulai kembali.",
+    "word_count": 27,
+    "category_id": 2,
+    "difficulty_level": "intermediate"
+  },
+  {
+    "title": "Esai Tentang Kesunyian",
+    "content": "Kesunyian bukan semata-mata ketiadaan suara, melainkan ruang batin di mana kita belajar mendengar diri sendiri. Dalam sunyi, pikiran menemukan kembali irama dan makna yang kadang hilang dalam kebisingan dunia.",
+    "word_count": 29,
+    "category_id": 2,
+    "difficulty_level": "intermediate"
+  },
+  {
+    "title": "Narasi tentang Perjalanan",
+    "content": "Perjalanan bukan hanya tentang tempat yang dituju, tetapi tentang perubahan yang terjadi dalam diri kita sepanjang jalan. Setiap langkah adalah pelajaran, setiap persimpangan adalah pilihan, dan setiap detik yang berlalu adalah kisah yang tertulis diam-diam.",
+    "word_count": 35,
+    "category_id": 2,
+    "difficulty_level": "advanced"
+  },
+  {
+    "title": "Puisi Kontemplatif",
+    "content": "Di lorong waktu yang sepi, aku berjalan tanpa arah, menggenggam serpihan mimpi yang tak selesai. Di balik keremangan malam, kutemukan cahaya kecil: harapan yang bersinar redup tapi setia, tak pernah padam oleh angin keraguan.",
+    "word_count": 34,
+    "category_id": 2,
+    "difficulty_level": "advanced"
+  },
+  {
+    "title": "Kutipan Bumi Manusia",
+    "content": "\"Kau boleh pandai setinggi langit, tapi selama kau tak menulis, kau akan hilang dari masyarakat dan dari sejarah,\" tulis Pramoedya Ananta Toer dalam Bumi Manusia, menggugah kesadaran pentingnya mewariskan pikiran lewat tulisan.",
+    "word_count": 32,
+    "category_id": 2,
+    "difficulty_level": "advanced"
+  },
+  {
+    "title": "Makna Dalam Keheningan",
+    "content": "Ketika dunia berhenti sejenak dalam diam, ada suara-suara yang akhirnya bisa terdengar. Keheningan bukanlah kekosongan, melainkan wadah di mana pikiran, kenangan, dan harapan bertemu dan berdialog dalam senyap.",
+    "word_count": 28,
+    "category_id": 2,
+    "difficulty_level": "advanced"
+  }
+]

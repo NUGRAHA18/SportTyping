@@ -1,0 +1,142 @@
+[
+  {
+    "title": "Fakta Menarik tentang Pisang",
+    "content": "Pisang adalah buah yang tidak tumbuh di pohon. Tanaman pisang sebenarnya adalah herba terbesar di dunia, dan batangnya terdiri dari lapisan-lapisan daun yang menggulung rapat.",
+    "word_count": 25,
+    "category_id": 6,
+    "difficulty_level": "beginner"
+  },
+  {
+    "title": "Kutipan Albert Einstein",
+    "content": "\"Imajinasi lebih penting daripada pengetahuan. Pengetahuan terbatas, sementara imajinasi mencakup seluruh dunia.\"",
+    "word_count": 12,
+    "category_id": 6,
+    "difficulty_level": "beginner"
+  },
+  {
+    "title": "Riddle: Siapa Aku?",
+    "content": "Aku memiliki kunci tapi tidak bisa membuka pintu. Aku punya ruang tapi tidak ada kamar. Aku digunakan untuk mengetik. Siapakah aku?",
+    "word_count": 21,
+    "category_id": 6,
+    "difficulty_level": "beginner"
+  },
+  {
+    "title": "Trivia: Asal Usul Nama Sandwich",
+    "content": "Kata 'sandwich' berasal dari nama seorang bangsawan Inggris, John Montagu, Earl of Sandwich, yang suka makan daging di antara dua potong roti saat bermain kartu.",
+    "word_count": 25,
+    "category_id": 6,
+    "difficulty_level": "beginner"
+  },
+  {
+    "title": "Fakta Menarik: Beku Tanpa Membeku",
+    "content": "Air panas bisa membeku lebih cepat daripada air dingin dalam kondisi tertentu, fenomena ini disebut Efek Mpemba, dinamai dari siswa asal Tanzania yang pertama kali mencatatnya.",
+    "word_count": 26,
+    "category_id": 6,
+    "difficulty_level": "intermediate"
+  },
+  {
+    "title": "Quote dari R.A. Kartini",
+    "content": "\"Habis gelap terbitlah terang. Perempuan juga memiliki hak untuk belajar dan berkembang seperti laki-laki.\"",
+    "word_count": 14,
+    "category_id": 6,
+    "difficulty_level": "intermediate"
+  },
+  {
+    "title": "Joke Informatika",
+    "content": "Kenapa programmer selalu bingung di jalan? Karena mereka selalu tersesat di 'loop'.",
+    "word_count": 12,
+    "category_id": 6,
+    "difficulty_level": "intermediate"
+  },
+  {
+    "title": "Trivia: Fakta Unik Ular",
+    "content": "Ular tidak bisa berkedip karena mereka tidak memiliki kelopak mata. Sebagai gantinya, mereka memiliki sisik transparan yang melindungi mata mereka.",
+    "word_count": 28,
+    "category_id": 6,
+    "difficulty_level": "intermediate"
+  },
+  {
+    "title": "Fakta Lucu tentang Koala",
+    "content": "Koala memiliki sidik jari yang sangat mirip dengan manusia. Bahkan di bawah mikroskop, sulit membedakan sidik jari manusia dan koala.",
+    "word_count": 20,
+    "category_id": 6,
+    "difficulty_level": "intermediate"
+  },
+  {
+    "title": "Riddle: Dua Saudara Aneh",
+    "content": "Aku memiliki saudara kembar yang selalu bersamaku. Jika satu menutup, yang lain membuka. Kita tidak pernah bertemu, tapi selalu bekerja sama. Siapakah kami?",
+    "word_count": 23,
+    "category_id": 6,
+    "difficulty_level": "intermediate"
+  },
+  {
+    "title": "Fakta: Bahasa Terpanjang",
+    "content": "Bahasa Jerman dikenal memiliki kata-kata panjang, seperti 'Donaudampfschifffahrtsgesellschaftskapitän', yang berarti kapten perusahaan kapal uap Sungai Donau. Kata ini menunjukkan fleksibilitas bahasa Jerman dalam membentuk istilah teknis.",
+    "word_count": 26,
+    "category_id": 6,
+    "difficulty_level": "advance"
+  },
+  {
+    "title": "Quote dari Leonardo da Vinci",
+    "content": "\"Kesederhanaan adalah kecanggihan tertinggi.\" Kutipan ini menunjukkan bahwa desain yang efektif sering kali lebih baik jika tidak rumit.",
+    "word_count": 18,
+    "category_id": 6,
+    "difficulty_level": "advance"
+  },
+  {
+    "title": "Trivia: Planet yang Mengapung",
+    "content": "Planet Saturnus sebagian besar terdiri dari gas dan sangat ringan sehingga bisa mengapung di atas air jika ada kolam yang cukup besar untuk menampungnya.",
+    "word_count": 24,
+    "category_id": 6,
+    "difficulty_level": "advance"
+  },
+  {
+    "title": "Fakta: Jantung Gurita",
+    "content": "Gurita memiliki tiga jantung. Dua jantung memompa darah ke insang, dan satu jantung memompa darah ke seluruh tubuh. Saat berenang, jantung utamanya berhenti berdetak.",
+    "word_count": 24,
+    "category_id": 6,
+    "difficulty_level": "advance"
+  },
+  {
+    "title": "Joke Filsuf",
+    "content": "Seorang filsuf masuk ke kafe dan memesan 'kopi eksistensial'. Pelayan bertanya, \"Mau gula atau makna hidup bersamanya?\"",
+    "word_count": 17,
+    "category_id": 6,
+    "difficulty_level": "advance"
+  },
+  {
+    "title": "Riddle: Tanpa Suara Tapi Bicara",
+    "content": "Aku tidak memiliki mulut, tapi bisa berbicara. Tidak punya telinga, tapi bisa mendengarkan. Aku hadir di banyak tempat, tapi tak pernah terlihat. Siapakah aku?",
+    "word_count": 24,
+    "category_id": 6,
+    "difficulty_level": "advance"
+  },
+  {
+    "title": "Trivia: Warna Langit Mars",
+    "content": "Langit di Mars berwarna oranye kemerahan di siang hari karena debu halus di atmosfernya. Tapi saat matahari terbenam, langit Mars bisa tampak biru.",
+    "word_count": 23,
+    "category_id": 6,
+    "difficulty_level": "advance"
+  },
+  {
+    "title": "Quote dari Steve Jobs",
+    "content": "\"Inovasi membedakan antara pemimpin dan pengikut.\" Kutipan ini mendorong kita untuk berpikir kreatif dan melampaui kebiasaan.",
+    "word_count": 16,
+    "category_id": 6,
+    "difficulty_level": "advance"
+  },
+  {
+    "title": "Fun Fact: Kentang di Luar Angkasa",
+    "content": "NASA pernah menanam kentang di lingkungan simulasi Mars. Hal ini menjadi inspirasi dalam film The Martian, menunjukkan kemungkinan bercocok tanam di luar angkasa.",
+    "word_count": 23,
+    "category_id": 6,
+    "difficulty_level": "advance"
+  },
+  {
+    "title": "Riddle: Jam Ajaib",
+    "content": "Aku selalu berjalan tetapi tidak pernah bergerak. Aku memberi tahu waktu, tapi tidak bisa berbicara. Aku punya dua tangan tapi tak bisa memegang. Siapakah aku?",
+    "word_count": 25,
+    "category_id": 6,
+    "difficulty_level": "advance"
+  }
+]

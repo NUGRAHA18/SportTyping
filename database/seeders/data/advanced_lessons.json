@@ -1,0 +1,122 @@
+[
+  {
+    "title": "Optimasi Kecepatan - 60+ KPM",
+    "content": "Pelatihan kecepatan lanjutan menargetkan 60+ kata per menit. Fokus pada pergerakan jari yang lancar dan ritme. Ketik: 'Pengetik lanjutan mengembangkan kompetensi tidak sadar di mana jari-jari bergerak secara otomatis ke tombol yang benar tanpa pemikiran sadar. Memori otot ini dikembangkan melalui latihan yang konsisten dan teknik yang tepat. Tujuannya adalah mencapai ritme yang stabil di mana setiap penekanan tombol mengalir secara alami ke yang berikutnya, menciptakan pengalaman mengetik yang mulus.'",
+    "difficulty_level": "advanced",
+    "order_number": 1,
+    "estimated_completion_time": 30,
+    "experience_reward": 200
+  },
+  {
+    "title": "Konstruksi Pemrograman Kompleks",
+    "content": "Kuasai sintaks pemrograman lanjutan: 'class DataProcessor { constructor(config) { this.config = {...defaultConfig, ...config}; this.results = []; } async processData(data) { try { const filtered = data.filter(item => item.isValid && item.timestamp > this.config.cutoff); return await Promise.all(filtered.map(async item => { const processed = await this.transform(item); return {...item, ...processed}; })); } catch (error) { throw new Error(`Pemrosesan gagal: ${error.message}`); } } }'",
+    "difficulty_level": "advanced",
+    "order_number": 2,
+    "estimated_completion_time": 45,
+    "experience_reward": 275
+  },
+  {
+    "title": "JSON dan Struktur Data",
+    "content": "Berlatih JSON dan struktur data yang kompleks: '{ \"pengguna\": [{ \"id\": 1001, \"profil\": { \"nama\": \"Alice Johnson\", \"email\": \"alice.johnson@example.com\", \"preferensi\": { \"tema\": \"gelap\", \"notifikasi\": true, \"bahasa\": \"id-ID\" }, \"metadata\": { \"dibuat_pada\": \"2024-01-15T10:30:00Z\", \"login_terakhir\": \"2024-03-20T14:45:33Z\", \"jumlah_login\": 247 } }, \"izin\": [\"baca\", \"tulis\", \"admin\"] }] }'",
+    "difficulty_level": "advanced",
+    "order_number": 3,
+    "estimated_completion_time": 40,
+    "experience_reward": 250
+  },
+  {
+    "title": "Pola Regex Lanjutan",
+    "content": "Ketik ekspresi reguler yang kompleks: 'const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$/; const phoneRegex = /^\\+?62?[-.\\s]?\\(?[0-9]{2,3}\\)?[-.\\s]?[0-9]{3,4}[-.\\s]?[0-9]{4}$/; const urlRegex = /https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)/; const strongPasswordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$/;'",
+    "difficulty_level": "advanced",
+    "order_number": 4,
+    "estimated_completion_time": 35,
+    "experience_reward": 225
+  },
+  {
+    "title": "Query SQL dan Kode Database",
+    "content": "Berlatih pernyataan SQL yang kompleks: 'SELECT u.id, u.username, u.email, p.judul, p.dibuat_pada, COUNT(c.id) as jumlah_komentar, AVG(r.rating) as rata_rating FROM pengguna u INNER JOIN postingan p ON u.id = p.penulis_id LEFT JOIN komentar c ON p.id = c.postingan_id LEFT JOIN rating r ON p.id = r.postingan_id WHERE u.status = \"aktif\" AND p.dipublikasi_pada BETWEEN \"2024-01-01\" AND \"2024-12-31\" GROUP BY u.id, p.id HAVING COUNT(c.id) > 5 ORDER BY rata_rating DESC, p.dibuat_pada DESC LIMIT 50;'",
+    "difficulty_level": "advanced",
+    "order_number": 5,
+    "estimated_completion_time": 40,
+    "experience_reward": 250
+  },
+  {
+    "title": "Notasi Matematika Lanjutan",
+    "content": "Ketik ekspresi dan rumus matematika: 'Rumus kuadrat: x = (-b ± √(b² - 4ac)) / (2a). Untuk analisis statistik: σ = √(Σ(xi - μ)² / N). Fungsi biaya machine learning: J(θ) = (1/2m) * Σ(hθ(x⁽ⁱ⁾) - y⁽ⁱ⁾)². Distribusi probabilitas: P(X = k) = (n! / (k!(n-k)!)) * p^k * (1-p)^(n-k). Kalkulus integral: ∫[a to b] f(x)dx = F(b) - F(a).'",
+    "difficulty_level": "advanced",
+    "order_number": 6,
+    "estimated_completion_time": 35,
+    "experience_reward": 225
+  },
+  {
+    "title": "Command Line dan Terminal",
+    "content": "Kuasai sintaks command line: 'sudo apt-get update && sudo apt-get upgrade -y; docker run -d --name webapp -p 8080:80 -v /host/path:/container/path -e NODE_ENV=production myapp:latest; git clone https://github.com/user/repo.git && cd repo && npm install && npm run build; find /var/log -name \"*.log\" -mtime +30 -exec rm {} \\; chmod 755 /usr/local/bin/script.sh; crontab -e; ssh -i ~/.ssh/id_rsa user@server.com \"cd /app && git pull && pm2 restart all\"'",
+    "difficulty_level": "advanced",
+    "order_number": 7,
+    "estimated_completion_time": 40,
+    "experience_reward": 250
+  },
+  {
+    "title": "Format Lanjutan dan Markup",
+    "content": "Berlatih bahasa markup lanjutan: '<!DOCTYPE html><html lang=\"id\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>Contoh Lanjutan</title><style>@media (max-width: 768px) { .container { flex-direction: column; } .card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); } }</style></head><body><main class=\"container\"><section class=\"hero\"><h1>Selamat Datang</h1></section></main></body></html>'",
+    "difficulty_level": "advanced",
+    "order_number": 8,
+    "estimated_completion_time": 45,
+    "experience_reward": 275
+  },
+  {
+    "title": "Peningkatan Akurasi - Pengurangan Kesalahan",
+    "content": "Fokus pada menghilangkan kesalahan mengetik umum dengan teks yang menantang: 'Diperlukan mengakomodasi terjadi awal pasti terpisah menerima pemerintah pengalaman mandiri segera berbeda penting tersedia berhasil profesional sesuai signifikan lingkungan pengembangan manajemen terjadi terjadi terjadi. Berlatih kata-kata yang sering salah eja ini: hak istimewa, farmasi, birokrasi, wirausaha, renaisans, perbedaan, memalukan, milenium, mengakomodasi, pengawasan.'",
+    "difficulty_level": "advanced",
+    "order_number": 9,
+    "estimated_completion_time": 30,
+    "experience_reward": 200
+  },
+  {
+    "title": "Perpindahan Multi-Bahasa Kode",
+    "content": "Berlatih beralih antara bahasa pemrograman yang berbeda: 'Python: def fibonacci(n): return n if n <= 1 else fibonacci(n-1) + fibonacci(n-2); JavaScript: const fibonacci = (n) => n <= 1 ? n : fibonacci(n-1) + fibonacci(n-2); Java: public static int fibonacci(int n) { return n <= 1 ? n : fibonacci(n-1) + fibonacci(n-2); } C++: int fibonacci(int n) { return n <= 1 ? n : fibonacci(n-1) + fibonacci(n-2); }'",
+    "difficulty_level": "advanced",
+    "order_number": 10,
+    "estimated_completion_time": 40,
+    "experience_reward": 250
+  },
+  {
+    "title": "Dokumentasi Teknis Lanjutan",
+    "content": "Ketik dokumentasi teknis komprehensif: 'API Endpoint: POST /api/v2/pengguna/{userId}/preferensi. Request Headers: Authorization: Bearer {jwt_token}, Content-Type: application/json, X-API-Version: 2.1.0. Request Body: {\"tema\": \"gelap|terang\", \"bahasa\": \"id-ID|en-US|es-ES\", \"notifikasi\": {\"email\": boolean, \"push\": boolean, \"sms\": boolean}, \"privasi\": {\"visibilitas_profil\": \"publik|privat|teman\", \"berbagi_data\": boolean}}. Response Codes: 200 (Berhasil), 400 (Bad Request), 401 (Tidak Diotorisasi), 403 (Dilarang), 404 (Tidak Ditemukan), 429 (Terlalu Banyak Request), 500 (Internal Server Error).'",
+    "difficulty_level": "advanced",
+    "order_number": 11,
+    "estimated_completion_time": 45,
+    "experience_reward": 275
+  },
+  {
+    "title": "Pelatihan Speed Burst",
+    "content": "Speed burst intensitas tinggi. Ketik secepat mungkin sambil mempertahankan akurasi: 'Rubah coklat yang cepat melompati anjing yang malas. Isi kotakku dengan lima lusin botol minuman keras. Betapa cepatnya zebra bodoh melompat! Rubah cerah melompat; unggas mengantuk berkotek. Angin sepoi-sepoi cepat mengganggu Jim yang bodoh. Angin sepoi-sepoi cepat bertiup, mengganggu Jim yang bodoh. Dua joki yang terdorong membantu faks kuis besarku. Lima angin sepoi-sepoi berkotek mengguncang tempat tidur lilinku. Lima penyihir tinju melompat dengan cepat.'",
+    "difficulty_level": "advanced",
+    "order_number": 12,
+    "estimated_completion_time": 25,
+    "experience_reward": 175
+  },
+  {
+    "title": "Pintasan Keyboard Lanjutan",
+    "content": "Berlatih mengetik pintasan keyboard dan perintah: 'Ctrl+C, Ctrl+V, Ctrl+X, Ctrl+Z, Ctrl+Y, Ctrl+A, Ctrl+S, Ctrl+F, Ctrl+H, Ctrl+Shift+N, Alt+Tab, Ctrl+Shift+T, Ctrl+Shift+Delete, Windows+R, Windows+L, Windows+D, F1, F2, F5, F11, F12, Shift+F10, Ctrl+Alt+Delete, Ctrl+Shift+Esc, Alt+F4, Ctrl+Shift+Enter, Ctrl+Shift+Arrow, Ctrl+Home, Ctrl+End, Page Up, Page Down'",
+    "difficulty_level": "advanced",
+    "order_number": 13,
+    "estimated_completion_time": 30,
+    "experience_reward": 200
+  },
+  {
+    "title": "Pemulihan Kesalahan dan Editing",
+    "content": "Berlatih koreksi kesalahan yang efisien dan editing teks: 'Belajar menggunakan pintasan keyboard untuk editing yang efisien: Ctrl+Backspace (hapus kata), Ctrl+Delete (hapus kata ke depan), Ctrl+Shift+Arrow (pilih kata), Ctrl+Left/Right (pindah per kata), Home/End (awal/akhir baris), Ctrl+Home/End (awal/akhir dokumen). Berlatih koreksi kesalahan cepat tanpa mengganggu alur mengetik. Kembangkan memori otot untuk operasi editing yang umum.'",
+    "difficulty_level": "advanced",
+    "order_number": 14,
+    "estimated_completion_time": 35,
+    "experience_reward": 225
+  },
+  {
+    "title": "Penilaian Penguasaan Lanjutan",
+    "content": "Penilaian lanjutan akhir yang menggabungkan semua keterampilan elit: 'Selamat karena telah mencapai tingkat penguasaan lanjutan! Anda sekarang dapat mengetik 60+ KPM dengan akurasi 98%+, menangani sintaks pemrograman kompleks, notasi matematika, dan dokumentasi teknis. Jari-jari Anda bergerak dengan kompetensi tidak sadar di semua area keyboard. Anda telah menguasai: optimasi kecepatan, kombinasi karakter kompleks, perpindahan multi-bahasa kode, format lanjutan, dan pemulihan kesalahan. Terus berlatih untuk mempertahankan performa puncak dan pertimbangkan untuk mengajarkan keterampilan berharga ini kepada orang lain.'",
+    "difficulty_level": "advanced",
+    "order_number": 15,
+    "estimated_completion_time": 50,
+    "experience_reward": 300
+  }
+]
