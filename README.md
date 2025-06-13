@@ -8,16 +8,6 @@ SportTyping mengubah keterampilan mengetik sehari-hari menjadi olahraga kompetit
 
 ---
 
-## Demo & Screenshots
-
-> _Coming Soon_
-
-![Homepage](https://via.placeholder.com/800x400)  
-![Kompetisi Real-time](https://via.placeholder.com/800x400)  
-![Papan Peringkat](https://via.placeholder.com/800x400)
-
----
-
 ## ✨ Fitur Utama
 
 -   **Kompetisi Khusus Perangkat** – Arena terpisah untuk mobile dan PC agar fairplay.
@@ -105,12 +95,5 @@ php artisan serve
 -   ✅ Ruang kompetisi khusus perangkat
 -   ✅ Implementasi sistem liga & badge
 -   ✅ Sistem bot kompetitor
--   ❌ Konten pelajaran mengetik 10 jari
--   ❌ Aset visual (badge, liga, keyboard guides)
--   ❌ UI/UX responsif untuk mobile dan desktop
--   ❌ Implementasi real-time race tracking
--   ❌ Statistik dan analitik lanjutan
--   ❌ Pengujian menyeluruh
--   ❌ Deployment production
 
 **SportTyping** - Mengubah mengetik menjadi olahraga kompetitif yang menarik sejak 2025.
