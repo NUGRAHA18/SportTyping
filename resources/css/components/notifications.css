@@ -1,0 +1,319 @@
+.sport-notifications-container {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    z-index: 10000;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 400px;
+}
+
+/* Individual Notification */
+.sport-notification {
+    pointer-events: auto;
+    background: var(--bg-card);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-xl);
+    border: 1px solid var(--border-light);
+    overflow: hidden;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    min-width: 320px;
+    max-width: 400px;
+}
+
+.sport-notification.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.sport-notification::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--accent-primary);
+}
+
+.sport-notification.notification-success::before {
+    background: var(--accent-success);
+}
+
+.sport-notification.notification-error::before {
+    background: var(--accent-danger);
+}
+
+.sport-notification.notification-warning::before {
+    background: var(--accent-secondary);
+}
+
+.sport-notification.notification-info::before {
+    background: var(--accent-info);
+}
+
+.notification-content {
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    position: relative;
+}
+
+.notification-content i {
+    font-size: 1.2rem;
+    margin-top: 0.1rem;
+    flex-shrink: 0;
+}
+
+.notification-success .notification-content i {
+    color: var(--accent-success);
+}
+
+.notification-error .notification-content i {
+    color: var(--accent-danger);
+}
+
+.notification-warning .notification-content i {
+    color: var(--accent-secondary);
+}
+
+.notification-info .notification-content i {
+    color: var(--accent-info);
+}
+
+.notification-message {
+    flex: 1;
+    color: var(--text-primary);
+    font-weight: 500;
+    line-height: 1.4;
+    margin-right: 1rem;
+}
+
+.notification-close {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: var(--border-radius-sm);
+    transition: var(--transition-fast);
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.notification-close:hover {
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+}
+
+/* Progress Bar for Auto-dismiss */
+.notification-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.notification-progress-bar {
+    height: 100%;
+    background: var(--accent-primary);
+    width: 100%;
+    transform-origin: left;
+    animation: notification-dismiss 5s linear forwards;
+}
+
+.notification-success .notification-progress-bar {
+    background: var(--accent-success);
+}
+
+.notification-error .notification-progress-bar {
+    background: var(--accent-danger);
+}
+
+.notification-warning .notification-progress-bar {
+    background: var(--accent-secondary);
+}
+
+.notification-info .notification-progress-bar {
+    background: var(--accent-info);
+}
+
+@keyframes notification-dismiss {
+    from {
+        transform: scaleX(1);
+    }
+    to {
+        transform: scaleX(0);
+    }
+}
+
+/* Enhanced Notification Types */
+.sport-notification.notification-badge-earned {
+    background: linear-gradient(135deg, var(--medal-gradient));
+    color: white;
+    border: none;
+}
+
+.sport-notification.notification-badge-earned .notification-content i {
+    color: white;
+}
+
+.sport-notification.notification-badge-earned .notification-message {
+    color: white;
+}
+
+.sport-notification.notification-badge-earned::before {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.sport-notification.notification-level-up {
+    background: linear-gradient(135deg, var(--champion-gradient));
+    color: white;
+    border: none;
+}
+
+.sport-notification.notification-level-up .notification-content {
+    padding: 1.5rem;
+}
+
+.sport-notification.notification-level-up .notification-content i {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.sport-notification.notification-level-up .notification-message {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Notification Actions */
+.notification-actions {
+    padding: 0 1.5rem 1rem;
+    display: flex;
+    gap: 0.75rem;
+    justify-content: flex-end;
+}
+
+.notification-action {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.notification-action.primary {
+    background: var(--accent-primary);
+    color: white;
+}
+
+.notification-action.primary:hover {
+    background: #2563eb;
+}
+
+.notification-action.secondary {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-light);
+}
+
+.notification-action.secondary:hover {
+    background: var(--bg-tertiary);
+}
+
+/* ===================================
+ * MOBILE RESPONSIVE NOTIFICATIONS
+ * =================================== */
+@media (max-width: 768px) {
+    .sport-notifications-container {
+        top: 1rem;
+        right: 1rem;
+        left: 1rem;
+        max-width: none;
+    }
+
+    .sport-notification {
+        min-width: auto;
+        max-width: none;
+    }
+
+    .notification-content {
+        padding: 1rem;
+    }
+
+    .notification-message {
+        font-size: 0.9rem;
+    }
+}
+
+/* ===================================
+ * ACCESSIBILITY IMPROVEMENTS
+ * =================================== */
+
+.sport-notification {
+    role: alert;
+    aria-live: polite;
+}
+
+.sport-notification.notification-error {
+    aria-live: assertive;
+}
+
+.notification-close {
+    aria-label: "Close notification";
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .sport-notification {
+        border: 2px solid;
+    }
+
+    .sport-notification.notification-success {
+        border-color: var(--accent-success);
+    }
+
+    .sport-notification.notification-error {
+        border-color: var(--accent-danger);
+    }
+
+    .sport-notification.notification-warning {
+        border-color: var(--accent-secondary);
+    }
+
+    .sport-notification.notification-info {
+        border-color: var(--accent-info);
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .sport-notification {
+        transition: opacity 0.2s ease;
+    }
+
+    .sport-notification.show {
+        transform: none;
+    }
+
+    .notification-progress-bar {
+        animation: none;
+    }
+}
