@@ -35,7 +35,7 @@ class TypingLesson extends Model
      */
     public function progresses(): HasMany
     {
-        return $this->hasMany(LessonProgress::class);
+        return $this->hasMany(LessonProgress::class, 'lesson_id'); 
     }
 
     /**
