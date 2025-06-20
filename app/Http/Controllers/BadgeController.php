@@ -13,10 +13,13 @@ class BadgeController extends Controller
     {
         $user = Auth::user();
         
-        // Get all badges
-        $allBadges = Badge::orderBy('category')
+        // Get all badges - fix: remove category ordering since column doesn't exist
+        $allBadges = Badge::orderBy('requirement_type')
             ->orderBy('requirement_value')
             ->get();
+        
+        // Group badges by requirement type for better organization
+        $badgesByType = $allBadges->groupBy('requirement_type');
         
         // Get user's earned badges
         $userBadges = collect();
@@ -32,14 +35,19 @@ class BadgeController extends Controller
             
             // Get user stats for badge progress calculation
             $userStats = [
-                'best_wpm' => $user->practices()->max('wpm') ?? 0,
+                'experience' => $user->experiences()->sum('amount') ?? 0,
                 'best_accuracy' => $user->practices()->max('accuracy') ?? 0,
-                'total_practices' => $user->practices()->count(),
+                'best_speed' => $user->practices()->max('wpm') ?? 0,
+                'total_competitions' => $user->competitions()->count(),
                 'competitions_won' => $user->competitionResults()
                     ->whereHas('competition', function($q) {
-                        $q->whereRaw('(SELECT COUNT(*) FROM competition_results cr2 WHERE cr2.competition_id = competitions.id AND cr2.wmp > competition_results.wpm) = 0');
-                    })->count(),
-                'consecutive_days' => $this->calculateConsecutiveDays($user)
+                        $q->where('status', 'completed');
+                    })
+                    ->where('position', 1)
+                    ->count(),
+                'lessons_completed' => $user->lessonProgresses()
+                    ->whereNotNull('completed_at')
+                    ->count()
             ];
             
             // Get recently earned badges (last 30 days)
@@ -61,6 +69,7 @@ class BadgeController extends Controller
         
         return view('badges.index', compact(
             'allBadges',
+            'badgesByType',
             'userBadges', 
             'userStats',
             'recentBadges',
@@ -68,47 +77,21 @@ class BadgeController extends Controller
         ));
     }
     
-    private function calculateConsecutiveDays($user)
-    {
-        $practices = $user->practices()
-            ->selectRaw('DATE(created_at) as practice_date')
-            ->groupBy('practice_date')
-            ->orderBy('practice_date', 'desc')
-            ->pluck('practice_date')
-            ->map(function($date) {
-                return \Carbon\Carbon::parse($date);
-            });
-        
-        if ($practices->isEmpty()) return 0;
-        
-        $consecutiveDays = 1;
-        $currentDate = $practices->first();
-        
-        foreach ($practices->skip(1) as $practiceDate) {
-            if ($currentDate->diffInDays($practiceDate) === 1) {
-                $consecutiveDays++;
-                $currentDate = $practiceDate;
-            } else {
-                break;
-            }
-        }
-        
-        return $consecutiveDays;
-    }
-    
     private function getBadgeProgress($badge, $userStats)
     {
         switch ($badge->requirement_type) {
-            case 'wpm':
-                return min(100, ($userStats['best_wpm'] / $badge->requirement_value) * 100);
+            case 'experience':
+                return min(100, ($userStats['experience'] / $badge->requirement_value) * 100);
             case 'accuracy':
                 return min(100, ($userStats['best_accuracy'] / $badge->requirement_value) * 100);
-            case 'practices_completed':
-                return min(100, ($userStats['total_practices'] / $badge->requirement_value) * 100);
-            case 'competitions_won':
+            case 'speed':
+                return min(100, ($userStats['best_speed'] / $badge->requirement_value) * 100);
+            case 'competitions':
+                return min(100, ($userStats['total_competitions'] / $badge->requirement_value) * 100);
+            case 'wins':
                 return min(100, ($userStats['competitions_won'] / $badge->requirement_value) * 100);
-            case 'consecutive_days':
-                return min(100, ($userStats['consecutive_days'] / $badge->requirement_value) * 100);
+            case 'lessons':
+                return min(100, ($userStats['lessons_completed'] / $badge->requirement_value) * 100);
             default:
                 return 0;
         }

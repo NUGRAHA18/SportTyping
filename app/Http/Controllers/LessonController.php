@@ -22,7 +22,7 @@ class LessonController extends Controller
         $user = Auth::user();
         
         $lessons = TypingLesson::orderBy('order_number')
-            ->with(['progress' => function($query) use ($user) {
+            ->with(['progresses' => function($query) use ($user) {
                 $query->where('user_id', $user->id);
             }])
             ->get();
